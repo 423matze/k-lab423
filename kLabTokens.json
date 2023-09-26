@@ -2,493 +2,61 @@
   "Layout": {
     "Containers": {
       "Dock": {
-        "value": "{Base.Rem} * 7",
+        "value": "7rem",
         "type": "dimension"
       },
       "MenuLeft": {
-        "value": "{Base.Rem} * 14",
+        "value": "14rem",
         "type": "dimension"
       },
       "MenuRight": {
-        "value": "{Base.Rem} * 20",
+        "value": "20rem",
         "type": "dimension"
       },
       "ChatWrap": {
-        "value": "{Base.Rem} *52",
+        "value": "52px",
+        "type": "dimension"
+      },
+      "Body": {
+        "value": "90rem",
+        "type": "dimension"
+      },
+      "Test": {
+        "value": "10rem",
         "type": "dimension"
       }
     },
     "Base": {
-      "Rem": {
-        "value": "1rem",
-        "type": "dimension"
+      "Space": {
+        "value": "16px",
+        "type": "dimension",
+        "description": "Rotschild has a 5, 15, 20, ... Spacing numberrow"
+      }
+    },
+    "Spacing": {
+      "XS": {
+        "value": "{Base.Space} /3",
+        "type": "spacing"
+      },
+      "SM": {
+        "value": "{Base.Space}",
+        "type": "spacing"
+      },
+      "MD": {
+        "value": "{Base.Space} *2",
+        "type": "spacing"
+      },
+      "LG": {
+        "value": "{Base.Space} *3",
+        "type": "spacing"
+      },
+      "XL": {
+        "value": "{Base.Space} *4",
+        "type": "spacing"
       }
     }
   },
   "Brands/Klab/Corp": {
-    "brand": {
-      "primary": {
-        "value": "#30B6FF",
-        "type": "color",
-        "description": "30B6FF"
-      },
-      "secondary": {
-        "value": "#1F8EB1",
-        "type": "color",
-        "description": "1F8EB1"
-      },
-      "tertiary": {
-        "value": "#383838",
-        "type": "color",
-        "description": "383838"
-      }
-    },
-    "buttons": {
-      "secondary-default": {
-        "value": "#39708400",
-        "type": "color",
-        "description": "387084"
-      },
-      "secondary-hover": {
-        "value": "#397084",
-        "type": "color",
-        "description": "387084"
-      },
-      "button-secondary-active": {
-        "value": "#1f8fb2",
-        "type": "color",
-        "description": "1F8FB2"
-      },
-      "icon": {
-        "value": {
-          "spacing": "{spacing.xs}"
-        },
-        "type": "composition"
-      }
-    },
-    "surfaces": {
-      "surface-1": {
-        "value": "#1F1F1F",
-        "type": "color",
-        "description": "1E1E1D"
-      },
-      "surface-2": {
-        "value": "#252423",
-        "type": "color",
-        "description": "252423"
-      },
-      "surface-3": {
-        "value": "#2D2F31",
-        "type": "color",
-        "description": "252423"
-      },
-      "surface-4": {
-        "value": "#383838",
-        "type": "color",
-        "description": "252423"
-      },
-      "surface-error": {
-        "value": "#0a618f",
-        "type": "color",
-        "description": "09608F"
-      }
-    },
-    "text-color": {
-      "text-default": {
-        "value": "{grounds.front}",
-        "type": "color",
-        "description": "D9D7DD"
-      },
-      "on-surface-1": {
-        "value": "{grounds.front}",
-        "type": "color",
-        "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "mix",
-              "value": "0.15",
-              "space": "hsl",
-              "color": "{brand.primary} "
-            }
-          }
-        }
-      },
-      "on-surface-2": {
-        "value": "{grounds.front}",
-        "type": "color",
-        "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "mix",
-              "value": "0.15",
-              "space": "hsl",
-              "color": "{brand.primary} "
-            }
-          }
-        }
-      },
-      "on-surface-4": {
-        "value": "{grounds.front}",
-        "type": "color",
-        "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "mix",
-              "value": "0.15",
-              "space": "hsl",
-              "color": "{brand.primary} "
-            }
-          }
-        }
-      },
-      "text-active": {
-        "value": "{brand.secondary}",
-        "type": "color"
-      }
-    },
-    "elevation": {
-      "fab": {
-        "value": {
-          "color": "#00000099",
-          "type": "dropShadow",
-          "x": "0",
-          "y": "4",
-          "blur": "8",
-          "spread": "0"
-        },
-        "type": "boxShadow"
-      }
-    },
-    "fontFamilies": {
-      "bread": {
-        "value": "Roboto",
-        "type": "fontFamilies"
-      },
-      "display": {
-        "value": "Roboto Slab",
-        "type": "fontFamilies"
-      }
-    },
-    "lineHeights": {
-      "densed": {
-        "value": "0.8",
-        "type": "lineHeights"
-      },
-      "line": {
-        "value": "1",
-        "type": "lineHeights"
-      },
-      "wide": {
-        "value": "1.8",
-        "type": "lineHeights"
-      },
-      "default": {
-        "value": "1.5",
-        "type": "lineHeights"
-      }
-    },
-    "fontWeights": {
-      "reguar": {
-        "value": "Regular",
-        "type": "fontWeights"
-      },
-      "light": {
-        "value": "Light",
-        "type": "fontWeights"
-      },
-      "medium": {
-        "value": "Medium",
-        "type": "fontWeights"
-      }
-    },
-    "fontSize": {
-      "sx": {
-        "value": "0.875*{Base.Rem}",
-        "type": "fontSizes"
-      },
-      "sm": {
-        "value": "{Base.Rem}",
-        "type": "fontSizes"
-      },
-      "md": {
-        "value": "1.25*{Base.Rem}",
-        "type": "fontSizes"
-      },
-      "lg": {
-        "value": "1.75*{Base.Rem}",
-        "type": "fontSizes"
-      }
-    },
-    "letterSpacing": {
-      "default": {
-        "value": "0.42%",
-        "type": "letterSpacing"
-      }
-    },
-    "paragraphSpacing": {
-      "0": {
-        "value": "0",
-        "type": "paragraphSpacing"
-      }
-    },
-    "lable-md": {
-      "value": {
-        "fontFamily": "{fontFamilies.bread}",
-        "fontWeight": "{fontWeights.reguar}",
-        "lineHeight": "{lineHeights.default}*{fontSize.sm}",
-        "fontSize": "{fontSize.sm}",
-        "letterSpacing": "{letterSpacing.default}",
-        "paragraphSpacing": "{paragraphSpacing.0}",
-        "paragraphIndent": "{distances.0}",
-        "textCase": "{textCase.none}",
-        "textDecoration": "{textDecoration.none}"
-      },
-      "type": "typography"
-    },
-    "label-larg": {
-      "value": {
-        "fontFamily": "{fontFamilies.bread}",
-        "fontWeight": "{fontWeights.reguar}",
-        "lineHeight": "{lineHeights.default}*{fontSize.md}",
-        "fontSize": "{fontSize.md}",
-        "letterSpacing": "{letterSpacing.default}",
-        "paragraphSpacing": "{paragraphSpacing.0}",
-        "paragraphIndent": "{distances.0}",
-        "textCase": "{textCase.none}",
-        "textDecoration": "{textDecoration.none}"
-      },
-      "type": "typography"
-    },
-    "label-sm": {
-      "value": {
-        "fontFamily": "{fontFamilies.bread}",
-        "fontWeight": "{fontWeights.medium}",
-        "lineHeight": "{lineHeights.line}*{fontSize.sx}",
-        "fontSize": "{fontSize.sx}",
-        "letterSpacing": "{letterSpacing.default}",
-        "paragraphSpacing": "{paragraphSpacing.0}",
-        "paragraphIndent": "{distances.0}",
-        "textCase": "{textCase.none}",
-        "textDecoration": "{textDecoration.none}"
-      },
-      "type": "typography"
-    },
-    "title": {
-      "value": {
-        "fontFamily": "{fontFamilies.display}",
-        "fontWeight": "{fontWeights.reguar}",
-        "lineHeight": "{lineHeights.default}*{fontSize.lg}",
-        "fontSize": "{fontSize.lg}",
-        "letterSpacing": "{letterSpacing.default}",
-        "paragraphSpacing": "{paragraphSpacing.0}",
-        "paragraphIndent": "{distances.0}",
-        "textCase": "{textCase.none}",
-        "textDecoration": "{textDecoration.none}"
-      },
-      "type": "typography"
-    },
-    "body": {
-      "value": {
-        "fontFamily": "{fontFamilies.bread}",
-        "fontWeight": "{fontWeights.light}",
-        "lineHeight": "{fontSize.md}* {lineHeights.wide}",
-        "fontSize": "{fontSize.md}",
-        "letterSpacing": "{letterSpacing.default}",
-        "paragraphSpacing": "{paragraphSpacing.0}",
-        "paragraphIndent": "{distances.0}",
-        "textCase": "{textCase.none}",
-        "textDecoration": "{textDecoration.none}"
-      },
-      "type": "typography"
-    },
-    "link-text": {
-      "value": {
-        "fontFamily": "{fontFamilies.bread}",
-        "fontWeight": "{fontWeights.reguar}",
-        "lineHeight": "{lineHeights.default}",
-        "fontSize": "{fontSize.sm}",
-        "letterSpacing": "{letterSpacing.default}",
-        "paragraphSpacing": "{paragraphSpacing.0}",
-        "paragraphIndent": "{distances.0}",
-        "textCase": "{textCase.none}",
-        "textDecoration": "{textDecoration.none}"
-      },
-      "type": "typography"
-    },
-    "textCase": {
-      "none": {
-        "value": "none",
-        "type": "textCase"
-      }
-    },
-    "textDecoration": {
-      "none": {
-        "value": "none",
-        "type": "textDecoration"
-      }
-    },
-    "distances": {
-      "0": {
-        "value": "0px",
-        "type": "dimension"
-      },
-      "xs": {
-        "value": "{Base.Rem}/2",
-        "type": "dimension"
-      },
-      "sm": {
-        "value": "{Base.Rem}",
-        "type": "dimension"
-      },
-      "md": {
-        "value": "{Base.Rem} *1.5",
-        "type": "dimension"
-      },
-      "lg": {
-        "value": "{Base.Rem}*2",
-        "type": "dimension"
-      }
-    },
-    "spacing": {
-      "xs": {
-        "value": "{distances.xs}",
-        "type": "spacing"
-      },
-      "sm": {
-        "value": "{distances.sm}",
-        "type": "spacing"
-      },
-      "lg": {
-        "value": "{distances.lg}",
-        "type": "spacing"
-      }
-    },
-    "Base": {
-      "Rem": {
-        "value": "1rem",
-        "type": "dimension",
-        "description": "Is 16px"
-      }
-    },
-    "services": {
-      "menu": {
-        "rail": {
-          "value": {
-            "width": "{container.sm}"
-          },
-          "type": "composition"
-        },
-        "left": {
-          "value": {
-            "fill": "{surfaces.surface-4}",
-            "minWidth": "21*{Base.Rem}",
-            "paddingTop": "6* {Base.Rem}",
-            "paddingBottom": "2* {Base.Rem}",
-            "horizontalPadding": "2* {Base.Rem}",
-            "itemSpacing": "2* {Base.Rem}"
-          },
-          "type": "composition"
-        },
-        "right": {
-          "value": {
-            "fill": "{surfaces.surface-4}",
-            "minWidth": "12*{Base.Rem}",
-            "paddingTop": "4* {Base.Rem}",
-            "horizontalPadding": "{spacing.lg}",
-            "itemSpacing": "2\" {Base.Rem}"
-          },
-          "type": "composition"
-        }
-      },
-      "history": {
-        "item": {
-          "value": {
-            "paddingLeft": "{spacing.lg}"
-          },
-          "type": "composition"
-        },
-        "flyout-wrap": {
-          "value": {
-            "horizontalPadding": "{spacing.lg}"
-          },
-          "type": "composition",
-          "description": "Padding of the flyout and standard gaos"
-        }
-      }
-    },
-    "container": {
-      "sm": {
-        "value": "{Base.Rem} * 7",
-        "type": "dimension"
-      }
-    },
-    "grounds": {
-      "front": {
-        "value": "#fff",
-        "type": "color",
-        "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "mix",
-              "value": "0.023",
-              "space": "lch",
-              "color": "{brand.primary} "
-            }
-          }
-        }
-      },
-      "back": {
-        "value": "#000",
-        "type": "color"
-      }
-    },
-    "inputs": {
-      "search": {
-        "value": {
-          "height": "3*{Base.Rem}",
-          "borderRadius": "3/2*{Base.Rem}",
-          "itemSpacing": "{Base.Rem}",
-          "paddingLeft": "{Base.Rem}*0.781",
-          "paddingRight": "{Base.Rem}",
-          "fill": "{surfaces.surface-3}",
-          "borderBottom": "0"
-        },
-        "type": "composition"
-      },
-      "emphasized-background": {
-        "value": "{surfaces.surface-3}",
-        "type": "color"
-      },
-      "emphasized-font": {
-        "value": "{surfaces.surface-1}",
-        "type": "color"
-      }
-    },
-    "size": {
-      "icon-sm": {
-        "value": "1.5* {Base.Rem}",
-        "type": "sizing"
-      }
-    },
-    "Services": {
-      "MenuLeftActions": {
-        "value": {
-          "fill": "{text-color.text-default}"
-        },
-        "type": "composition"
-      }
-    },
-    "borders": {
-      "thin": {
-        "value": {
-          "width": "0",
-          "style": "solid"
-        },
-        "type": "border"
-      }
-    }
-  },
-  "Brands/Klab/GUI": {
     "Brand": {
       "Primary": {
         "value": "#28a9d3",
@@ -733,20 +301,21 @@
       }
     }
   },
+  "Brands/Klab/GUI": {},
   "Brands/Rothschild/Corp": {
     "Brand": {
       "Primary": {
-        "value": "#28a9d3",
+        "value": "#2E3E80",
         "type": "color",
         "description": "30B6FF"
       },
       "Secondary": {
-        "value": "#1F8EB1",
+        "value": "#CC9F53",
         "type": "color",
         "description": "1F8EB1"
       },
       "Tertiary": {
-        "value": "#383838",
+        "value": "#EFECEA",
         "type": "color",
         "description": "383838"
       }
@@ -769,65 +338,42 @@
       }
     },
     "Surfaces": {
-      "Surface4": {
-        "value": "{Grounds.Neutral4}",
+      "Surface1": {
+        "value": "{Grounds.Back}",
         "type": "color",
-        "description": "1E1E1D",
+        "$extensions": {}
+      },
+      "Surface2": {
+        "value": "{Brand.Primary}",
+        "type": "color",
+        "description": "252423",
         "$extensions": {
           "studio.tokens": {
             "modify": {
-              "type": "mix",
-              "value": "0.05",
-              "space": "hsl",
-              "color": "{Brand.Primary} "
+              "type": "darken",
+              "value": "0.2",
+              "space": "hsl"
             }
           }
         }
       },
       "Surface3": {
-        "value": "{Grounds.Neutral3}",
+        "value": "{Brand.Primary}",
         "type": "color",
         "description": "252423",
         "$extensions": {
           "studio.tokens": {
             "modify": {
-              "type": "mix",
-              "value": "0.05",
-              "space": "hsl",
-              "color": "{Brand.Primary} "
+              "type": "darken",
+              "value": "0.2",
+              "space": "hsl"
             }
           }
         }
       },
-      "Surface2": {
-        "value": "{Grounds.Neutral2}",
-        "type": "color",
-        "description": "252423",
-        "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "mix",
-              "value": "0.05",
-              "space": "hsl",
-              "color": "{Brand.Primary} "
-            }
-          }
-        }
-      },
-      "Surface1": {
-        "value": "{Grounds.Neutral1}",
-        "type": "color",
-        "description": "252423",
-        "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "mix",
-              "value": "0.02",
-              "space": "hsl",
-              "color": "{Brand.Primary} "
-            }
-          }
-        }
+      "Surface4": {
+        "value": "{Brand.Tertiary}",
+        "type": "color"
       },
       "SurfaceError": {
         "value": "#0a618f",
@@ -836,10 +382,14 @@
       }
     },
     "TextColors": {
-      "text-default": {
+      "OnLighterGrund": {
         "value": "{Grounds.Front}",
         "type": "color",
         "description": "D9D7DD"
+      },
+      "OnDarkerGround": {
+        "value": "#fff",
+        "type": "color"
       },
       "OnSurface1": {
         "value": "{Grounds.Front}",
@@ -850,7 +400,7 @@
               "type": "mix",
               "value": "0.0001",
               "space": "hsl",
-              "color": "{Surfaces.Surface1} "
+              "color": "{Surfaces.Body} "
             }
           }
         }
@@ -862,9 +412,9 @@
           "studio.tokens": {
             "modify": {
               "type": "mix",
-              "value": "0.001",
+              "value": "0.0001",
               "space": "hsl",
-              "color": "{Surfaces.Surface2} "
+              "color": "{Surfaces.Body} "
             }
           }
         }
@@ -897,19 +447,19 @@
           }
         }
       },
-      "Active": {
+      "IsActive": {
         "value": "{Brand.Secondary}",
         "type": "color"
       }
     },
     "Grounds": {
       "Front": {
-        "value": "#fefffe",
+        "value": "#000",
         "type": "color",
         "$extensions": {}
       },
       "Back": {
-        "value": "#000001",
+        "value": "#fff",
         "type": "color",
         "$extensions": {}
       },
@@ -983,14 +533,14 @@
       "Menu": {
         "Rail": {
           "value": {
-            "fill": "{Surfaces.Surface3}",
+            "fill": "{Surfaces.Surface2}",
             "width": "{Containers.Dock}"
           },
           "type": "composition"
         },
         "Left": {
           "value": {
-            "fill": "{Surfaces.Surface3}",
+            "fill": "{Surfaces.Surface2}",
             "width": "{Containers.MenuRight}",
             "paddingTop": "6* {Base.Rem}",
             "paddingBottom": "2* {Base.Rem}",
@@ -1018,26 +568,32 @@
       "History": {
         "Item": {
           "value": {
-            "paddingLeft": "{spacing.lg}"
+            "paddingLeft": "{Spacing.XS}"
           },
           "type": "composition"
-        },
-        "FlyoutWrap": {
-          "value": {
-            "horizontalPadding": "{spacing.lg}"
-          },
-          "type": "composition",
-          "description": "Padding of the flyout and standard gaos"
         }
       }
     },
     "Main": {
-      "ChatItem": {
+      "ChatBox": {
         "value": {
           "width": "{Containers.ChatWrap}",
           "fill": "{Surfaces.Surface4}"
         },
         "type": "composition"
+      },
+      "ChatStack": {
+        "value": {
+          "width": "{Containers.ChatWrap}",
+          "fill": "none"
+        },
+        "type": "composition"
+      }
+    },
+    "Base": {
+      "Space": {
+        "value": "15px",
+        "type": "dimension"
       }
     }
   },
@@ -1046,24 +602,21 @@
       "id": "c248ee67d79db910c26590cd69ea1f205c01f385",
       "name": "light",
       "$figmaStyleReferences": {},
-      "selectedTokenSets": {},
-      "group": "marvin"
-    },
-    {
-      "id": "3d00157a5a676bd9b2d134b67c40c18676dbeee8",
-      "name": "dark",
-      "$figmaStyleReferences": {},
       "selectedTokenSets": {
-        "Brands/Klab/Corp": "source"
+        "Layout": "source",
+        "Brands/Klab/GUI": "enabled",
+        "Brands/Klab/Corp": "enabled"
       },
-      "group": "marvin"
+      "group": "k-lab"
     },
     {
       "id": "89ae8bbfc0f86c48b72a881f179721fbd643cad0",
       "name": "light",
       "$figmaStyleReferences": {},
       "selectedTokenSets": {
-        "Brands/Klab/Corp": "source"
+        "Layout": "source",
+        "Brands/Rothschild/Corp": "enabled",
+        "Brands/Rothschild/GUI": "enabled"
       },
       "group": "rothschild"
     }
