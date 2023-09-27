@@ -102,15 +102,15 @@
         }
       },
       "OnSurface2": {
-        "value": "{Grounds.Front}",
+        "value": "{Surfaces.Surface2}",
         "type": "color",
         "$extensions": {
           "studio.tokens": {
             "modify": {
               "type": "mix",
-              "value": "0.0001",
+              "value": "0.95",
               "space": "hsl",
-              "color": "{Surfaces.Body} "
+              "color": "{TextColors.OnDarkerGround} "
             }
           }
         }
@@ -150,6 +150,19 @@
       "Headlines": {
         "value": "{Brand.Primary}",
         "type": "color"
+      },
+      "Reserved": {
+        "value": "{TextColors.OnSurface4}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "lighten",
+              "value": "0.42",
+              "space": "lch"
+            }
+          }
+        }
       }
     },
     "Grounds": {
@@ -223,7 +236,7 @@
         "value": {
           "fontFamily": "{FontFamilies.Bread}",
           "fontWeight": "{FontWeights.Reguar}",
-          "lineHeight": "{LineHeights.Denced}*{FontSizes.XS}",
+          "lineHeight": "{LineHeights.Normal}*{FontSizes.XS}",
           "fontSize": "{FontSizes.XS}",
           "letterSpacing": "{LetterSpacings.Normal}",
           "paragraphSpacing": "{ParagraphSpacings.None}",
@@ -272,7 +285,7 @@
           "letterSpacing": "{LetterSpacings.Normal}",
           "paragraphSpacing": "{ParagraphSpacings.None}",
           "paragraphIndent": "0",
-          "textCase": "{TextCases.None}",
+          "textCase": "{TextCases.UpperCase}",
           "textDecoration": "{TextDecorations.None}"
         },
         "type": "typography"
@@ -328,6 +341,10 @@
     "TextCases": {
       "None": {
         "value": "none",
+        "type": "textCase"
+      },
+      "UpperCase": {
+        "value": "uppercase",
         "type": "textCase"
       }
     },
@@ -439,6 +456,12 @@
         "value": "{Grounds.Neutral3}",
         "type": "color"
       }
+    },
+    "Gardients": {
+      "Header": {
+        "value": "linear-gradient(180deg, {Grounds.Back} 68.93%, rgba(255, 255, 255, 0.00) 93.26%)",
+        "type": "color"
+      }
     }
   },
   "GUI": {
@@ -454,11 +477,11 @@
         "Left": {
           "value": {
             "fill": "{Surfaces.Surface2}",
-            "width": "{Containers.MenuRight}",
-            "paddingTop": "6* {Base.Rem}",
-            "paddingBottom": "2* {Base.Rem}",
-            "horizontalPadding": "2* {Base.Rem}",
-            "itemSpacing": "2* {Base.Rem}"
+            "width": "{Containers.MenuLeft}",
+            "paddingTop": "6rem",
+            "paddingBottom": "0",
+            "horizontalPadding": "{Spacing.MD}",
+            "itemSpacing": "{Spacing.SM}"
           },
           "type": "composition"
         },
@@ -466,105 +489,106 @@
           "value": {
             "fill": "{Surfaces.Surface1}",
             "width": "{Containers.MenuLeft}",
-            "paddingTop": "4* {Base.Rem}",
+            "paddingTop": "6rem",
             "paddingBottom": "0"
           },
           "type": "composition"
         }
       },
-      "MenuLeftActions": {
-        "value": {
-          "fill": "{TextColors.OnSurface4}"
-        },
-        "type": "composition"
-      },
       "History": {
         "Item": {
           "value": {
-            "paddingLeft": "{Spacing.XS}"
+            "paddingLeft": "{Spacing.XS}",
+            "paddingTop": "0.125rem"
+          },
+          "type": "composition"
+        },
+        "Search": {
+          "value": {
+            "itemSpacing": "{Spacing.SM}",
+            "paddingLeft": "{Spacing.XS}",
+            "paddingRight": "{Spacing.SM}",
+            "fill": "{Surfaces.Surface2}",
+            "borderBottom": "{Borders.Inputs}",
+            "borderColor": "{TextColors.OnSurface2}"
           },
           "type": "composition"
         }
       },
-      "Dock": {
-        "value": {
-          "width": "{Containers.Dock}",
-          "fill": "{Surfaces.Surface2}"
-        },
-        "type": "composition"
-      }
-    },
-    "Main": {
-      "ChatStack": {
-        "value": {
-          "width": "{Containers.ChatWrap}",
-          "fill": "none"
-        },
-        "type": "composition"
-      },
-      "ChatBox": {
-        "Container": {
+      "Main": {
+        "ChatStack": {
           "value": {
             "width": "{Containers.ChatWrap}",
-            "fill": "{Surfaces.Surface4}"
+            "fill": "none"
           },
           "type": "composition"
         },
-        "InputContainer": {
-          "value": {
-            "spacing": "0",
-            "itemSpacing": "{Spacing.XS}"
+        "ChatBox": {
+          "Container": {
+            "value": {
+              "width": "{Containers.ChatWrap}",
+              "fill": "{Surfaces.Surface4}"
+            },
+            "type": "composition"
           },
-          "type": "composition"
+          "InputContainer": {
+            "value": {
+              "spacing": "0",
+              "itemSpacing": "{Spacing.XS}"
+            },
+            "type": "composition"
+          },
+          "Input": {
+            "value": {
+              "itemSpacing": "{Spacing.XS}",
+              "verticalPadding": "{Spacing.SM}",
+              "paddingLeft": "{Spacing.XS}",
+              "paddingRight": "{Spacing.SM}",
+              "borderBottom": "{BorderWidths.SM}",
+              "borderColor": "{TextColors.OnSurface4}"
+            },
+            "type": "composition"
+          },
+          "Value": {
+            "value": {
+              "typography": "{Label.MD}"
+            },
+            "type": "composition"
+          },
+          "Submit": {
+            "value": {
+              "sizing": "{Icons.LG}"
+            },
+            "type": "composition"
+          },
+          "Helper": {
+            "value": {
+              "paddingLeft": "{Spacing.XS}",
+              "itemSpacing": "{Spacing.XS}"
+            },
+            "type": "composition"
+          }
         },
-        "Input": {
-          "value": {
-            "itemSpacing": "{Spacing.XS}",
-            "verticalPadding": "{Spacing.SM}",
-            "paddingLeft": "{Spacing.XS}",
-            "paddingRight": "{Spacing.SM}"
+        "Chat": {
+          "ChatItemContainer": {
+            "value": {
+              "spacing": "{Spacing.MD}"
+            },
+            "type": "composition"
           },
-          "type": "composition"
-        },
-        "Value": {
-          "value": {
-            "typography": "{Label.MD}"
+          "Thread": {
+            "value": {
+              "itemSpacing": "0"
+            },
+            "type": "composition"
           },
-          "type": "composition"
-        },
-        "Submit": {
-          "value": {
-            "sizing": "{Icons.LG}"
-          },
-          "type": "composition"
-        },
-        "Helper": {
-          "value": {
-            "paddingLeft": "{Spacing.XS}",
-            "itemSpacing": "{Spacing.XS}"
-          },
-          "type": "composition"
-        }
-      },
-      "Chat": {
-        "ChatItemContainer": {
-          "value": {
-            "spacing": "{Spacing.MD}"
-          },
-          "type": "composition"
-        },
-        "Thread": {
-          "value": {
-            "itemSpacing": "0"
-          },
-          "type": "composition"
-        },
-        "Error": {
-          "value": {
-            "spacing": "{Spacing.MD}",
-            "fill": "{Surfaces.SurfaceError}"
-          },
-          "type": "composition"
+          "Error": {
+            "value": {
+              "spacing": "{Spacing.MD}",
+              "fill": "{Surfaces.SurfaceError}"
+            },
+            "type": "composition"
+          }
         }
       }
     },
@@ -598,6 +622,10 @@
       },
       "Body": {
         "value": "90rem",
+        "type": "dimension"
+      },
+      "Header": {
+        "value": "10rem",
         "type": "dimension"
       }
     },
@@ -653,6 +681,23 @@
           "style": "solid"
         },
         "type": "border"
+      }
+    },
+    "Main": {
+      "MainWrap": {
+        "value": {
+          "maxWidth": "55rem"
+        },
+        "type": "composition"
+      },
+      "Header": {
+        "value": {
+          "verticalPadding": "{Spacing.MD}",
+          "itemSpacing": "{Spacing.MD}",
+          "fill": "{Gardients.Header}",
+          "height": "{Containers.Header}"
+        },
+        "type": "composition"
       }
     }
   },
@@ -928,13 +973,13 @@
             "paddingBottom": "0"
           },
           "type": "composition"
-        }
-      },
-      "MenuLeftActions": {
-        "value": {
-          "fill": "{TextColors.OnSurface4}"
         },
-        "type": "composition"
+        "LeftActions": {
+          "value": {
+            "fill": "{TextColors.OnSurface4}"
+          },
+          "type": "composition"
+        }
       },
       "History": {
         "Item": {
@@ -1080,15 +1125,15 @@
         }
       },
       "OnSurface2": {
-        "value": "{Grounds.Front}",
+        "value": "{Surfaces.Surface2}",
         "type": "color",
         "$extensions": {
           "studio.tokens": {
             "modify": {
               "type": "mix",
-              "value": "0.0001",
+              "value": "0.95",
               "space": "hsl",
-              "color": "{Surfaces.Body} "
+              "color": "{TextColors.OnDarkerGround} "
             }
           }
         }
@@ -1124,6 +1169,23 @@
       "IsActive": {
         "value": "{Brand.Secondary}",
         "type": "color"
+      },
+      "Headlines": {
+        "value": "{Brand.Primary}",
+        "type": "color"
+      },
+      "Reserved": {
+        "value": "{TextColors.OnSurface4}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "lighten",
+              "value": "0.42",
+              "space": "lch"
+            }
+          }
+        }
       }
     },
     "Grounds": {
@@ -1192,11 +1254,236 @@
         }
       }
     },
-    "Base": {
-      "Rem": {
-        "value": "1rem",
-        "type": "dimension",
-        "description": "= 16px"
+    "Label": {
+      "XS": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{LineHeights.Normal}*{FontSizes.XS}",
+          "fontSize": "{FontSizes.XS}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}",
+          "paragraphIndent": "None"
+        },
+        "type": "typography"
+      },
+      "MD": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{FontSizes.MD}",
+          "fontSize": "{FontSizes.MD}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "paragraphIndent": "0",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      },
+      "LG": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{FontSizes.MD}",
+          "fontSize": "{FontSizes.LG}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "paragraphIndent": "0",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      }
+    },
+    "Titel": {
+      "XS": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{LineHeights.Denced}*{FontSizes.XS}",
+          "fontSize": "{FontSizes.XS}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "paragraphIndent": "0",
+          "textCase": "{TextCases.UpperCase}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      },
+      "MD": {
+        "value": {
+          "fontFamily": "{FontFamilies.Butter}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "fontSize": "{FontSizes.MD}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.Normal}",
+          "paragraphIndent": "None",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}",
+          "lineHeight": "{LineHeights.Denced}*{FontSizes.MD}"
+        },
+        "type": "typography",
+        "description": "Chat Questions"
+      }
+    },
+    "Body": {
+      "SM": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{FontSizes.SM}*{LineHeights.Normal}",
+          "fontSize": "{FontSizes.SM}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.Normal}",
+          "paragraphIndent": "None",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      }
+    },
+    "Interactions": {
+      "TextLink": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{LineHeights.Normal}*{FontSizes.SM}",
+          "fontSize": "{FontSizes.SM}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.Normal}",
+          "paragraphIndent": "0",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      }
+    },
+    "TextCases": {
+      "None": {
+        "value": "none",
+        "type": "textCase"
+      },
+      "UpperCase": {
+        "value": "uppercase",
+        "type": "textCase"
+      }
+    },
+    "TextDecorations": {
+      "None": {
+        "value": "none",
+        "type": "textDecoration"
+      }
+    },
+    "FontFamilies": {
+      "Butter": {
+        "value": "Calluna",
+        "type": "fontFamilies"
+      },
+      "Bread": {
+        "value": "Source Sans Pro",
+        "type": "fontFamilies"
+      }
+    },
+    "FontWeights": {
+      "Light": {
+        "value": "Light",
+        "type": "fontWeights"
+      },
+      "Reguar": {
+        "value": "Regular",
+        "type": "fontWeights"
+      },
+      "SemiBold": {
+        "value": "SemiBold",
+        "type": "fontWeights"
+      }
+    },
+    "LineHeights": {
+      "Denced": {
+        "value": "1.29",
+        "type": "lineHeights"
+      },
+      "Normal": {
+        "value": "1.8",
+        "type": "lineHeights"
+      },
+      "Wide": {
+        "value": "2.3",
+        "type": "lineHeights"
+      }
+    },
+    "FontSizes": {
+      "XS": {
+        "value": "0.875rem",
+        "type": "fontSizes"
+      },
+      "SM": {
+        "value": "1.25rem",
+        "type": "fontSizes",
+        "description": "Body Chat "
+      },
+      "MD": {
+        "value": "1.75rem",
+        "type": "fontSizes"
+      },
+      "LG": {
+        "value": "2.5rem",
+        "type": "fontSizes"
+      }
+    },
+    "LetterSpacings": {
+      "Condenced": {
+        "value": "-2%",
+        "type": "letterSpacing"
+      },
+      "Normal": {
+        "value": "0%",
+        "type": "letterSpacing"
+      },
+      "Narrow": {
+        "value": "-1%",
+        "type": "letterSpacing"
+      },
+      "Widened": {
+        "value": "1%",
+        "type": "letterSpacing"
+      },
+      "Expanded": {
+        "value": "2.423%",
+        "type": "letterSpacing"
+      }
+    },
+    "ParagraphSpacings": {
+      "Normal": {
+        "value": "2.813rem",
+        "type": "paragraphSpacing"
+      },
+      "None": {
+        "value": "0",
+        "type": "paragraphSpacing"
+      }
+    },
+    "IconColors": {
+      "Default": {
+        "value": "{TextColors.OnLighterGrund}",
+        "type": "color"
+      },
+      "Active": {
+        "value": "{Brand.Secondary}",
+        "type": "color"
+      },
+      "InActive": {
+        "value": "{Grounds.Neutral3}",
+        "type": "color"
+      }
+    },
+    "Gardients": {
+      "Header": {
+        "value": "linear-gradient(180deg, {Grounds.Back} 68.93%, rgba(255, 255, 255, 0.00) 93.26%)",
+        "type": "color"
       }
     }
   },
@@ -1213,11 +1500,11 @@
         "Left": {
           "value": {
             "fill": "{Surfaces.Surface2}",
-            "width": "{Containers.MenuRight}",
-            "paddingTop": "6* {Base.Rem}",
-            "paddingBottom": "2* {Base.Rem}",
-            "horizontalPadding": "2* {Base.Rem}",
-            "itemSpacing": "2* {Base.Rem}"
+            "width": "{Containers.MenuLeft}",
+            "paddingTop": "6rem",
+            "paddingBottom": "0",
+            "horizontalPadding": "{Spacing.MD}",
+            "itemSpacing": "{Spacing.SM}"
           },
           "type": "composition"
         },
@@ -1225,14 +1512,8 @@
           "value": {
             "fill": "{Surfaces.Surface1}",
             "width": "{Containers.MenuLeft}",
-            "paddingTop": "4* {Base.Rem}",
+            "paddingTop": "6rem",
             "paddingBottom": "0"
-          },
-          "type": "composition"
-        },
-        "LeftActions": {
-          "value": {
-            "fill": "{TextColors.OnSurface4}"
           },
           "type": "composition"
         }
@@ -1240,59 +1521,183 @@
       "History": {
         "Item": {
           "value": {
-            "paddingLeft": "{Icons.SM}+ {Spacing.XS}"
+            "paddingLeft": "{Spacing.XS}+ {Icons.SM}",
+            "paddingTop": "0.188rem"
           },
           "type": "composition"
         },
-        "LeadingIcon": {
+        "Search": {
           "value": {
-            "sizing": "{Icons.SM}"
-          },
-          "type": "composition"
-        }
-      }
-    },
-    "Main": {
-      "ChatStack": {
-        "value": {
-          "width": "{Containers.ChatWrap}",
-          "fill": "none"
-        },
-        "type": "composition"
-      },
-      "ChatBox": {
-        "Container": {
-          "value": {
-            "width": "{Containers.ChatWrap}",
-            "fill": "{Surfaces.Surface4}"
-          },
-          "type": "composition"
-        }
-      }
-    },
-    "Input": {
-      "Search": {
-        "Container": {
-          "value": {
+            "itemSpacing": "{Spacing.SM}",
             "paddingLeft": "{Spacing.XS}",
             "paddingRight": "{Spacing.SM}",
-            "itemSpacing": "{Spacing.SM}",
-            "fill": "{Surfaces.Surface2}"
-          },
-          "type": "composition"
-        },
-        "LeadingIcon": {
-          "value": {
-            "fill": "{TextColors.OnSurface3}"
-          },
-          "type": "composition"
-        },
-        "Value": {
-          "value": {
-            "fill": "{TextColors.OnSurface3}"
+            "fill": "{Surfaces.Surface2}",
+            "borderBottom": "{Borders.Inputs}",
+            "borderColor": "{TextColors.OnSurface2}"
           },
           "type": "composition"
         }
+      },
+      "Main": {
+        "ChatStack": {
+          "value": {
+            "width": "{Containers.ChatWrap}",
+            "fill": "none"
+          },
+          "type": "composition"
+        },
+        "ChatBox": {
+          "Container": {
+            "value": {
+              "width": "{Containers.ChatWrap}",
+              "fill": "{Surfaces.Surface4}"
+            },
+            "type": "composition"
+          },
+          "InputContainer": {
+            "value": {
+              "spacing": "0",
+              "itemSpacing": "{Spacing.XS}"
+            },
+            "type": "composition"
+          },
+          "Input": {
+            "value": {
+              "itemSpacing": "{Spacing.XS}",
+              "verticalPadding": "{Spacing.SM}",
+              "paddingLeft": "{Spacing.XS}",
+              "paddingRight": "{Spacing.SM}"
+            },
+            "type": "composition"
+          },
+          "Value": {
+            "value": {
+              "typography": "{Label.MD}"
+            },
+            "type": "composition"
+          },
+          "Submit": {
+            "value": {
+              "sizing": "{Icons.LG}"
+            },
+            "type": "composition"
+          },
+          "Helper": {
+            "value": {
+              "paddingLeft": "{Spacing.XS}",
+              "itemSpacing": "{Spacing.XS}"
+            },
+            "type": "composition"
+          }
+        },
+        "Chat": {
+          "ChatItemContainer": {
+            "value": {
+              "spacing": "{Spacing.MD}"
+            },
+            "type": "composition"
+          },
+          "Thread": {
+            "value": {
+              "itemSpacing": "0"
+            },
+            "type": "composition"
+          },
+          "Error": {
+            "value": {
+              "spacing": "{Spacing.MD}",
+              "fill": "{Surfaces.SurfaceError}"
+            },
+            "type": "composition"
+          }
+        }
+      }
+    },
+    "Base": {
+      "Spacing": {
+        "value": "0.9375rem",
+        "type": "dimension",
+        "description": "Rotschild has a 5, 15, 20, ... Spacing numberrow - interpretated in rem"
+      },
+      "TextRem": {
+        "value": "16px",
+        "type": "dimension"
+      }
+    },
+    "Containers": {
+      "Dock": {
+        "value": "7rem",
+        "type": "dimension"
+      },
+      "MenuLeft": {
+        "value": "14rem",
+        "type": "dimension"
+      },
+      "MenuRight": {
+        "value": "20rem",
+        "type": "dimension"
+      },
+      "ChatWrap": {
+        "value": "52rem",
+        "type": "dimension"
+      },
+      "Body": {
+        "value": "90rem",
+        "type": "dimension"
+      }
+    },
+    "Spacing": {
+      "XS": {
+        "value": "{Base.Spacing} /3",
+        "type": "spacing"
+      },
+      "SM": {
+        "value": "{Base.Spacing}",
+        "type": "spacing"
+      },
+      "MD": {
+        "value": "{Base.Spacing} *2",
+        "type": "spacing"
+      },
+      "LG": {
+        "value": "{Base.Spacing} *3",
+        "type": "spacing"
+      },
+      "XL": {
+        "value": "{Base.Spacing} *4",
+        "type": "spacing"
+      }
+    },
+    "Icons": {
+      "SM": {
+        "value": "1.5rem",
+        "type": "dimension"
+      },
+      "LG": {
+        "value": "2.5rem",
+        "type": "dimension"
+      }
+    },
+    "BorderWidths": {
+      "SM": {
+        "value": "1",
+        "type": "borderWidth"
+      }
+    },
+    "BorderRadiuses": {
+      "None": {
+        "value": "0",
+        "type": "borderRadius"
+      }
+    },
+    "Borders": {
+      "Inputs": {
+        "value": {
+          "color": "{Grounds.Front}",
+          "width": "0.063rem",
+          "style": "solid"
+        },
+        "type": "border"
       }
     }
   },
@@ -1306,18 +1711,114 @@
         "Brands/Klab/Corp": "enabled",
         "GUI": "source"
       },
-      "group": "k-lab"
+      "group": "k-lab",
+      "$figmaVariableReferences": {
+        "Base.Space": "1d4016b9d1e54b0a24afa89cbdee36baf1dacc75",
+        "Brand.Primary": "278e39d427a156d2616df4beb8de63754823fef5",
+        "Brand.Secondary": "5061317feadd5e483108da3ce918e8f09c9950c9",
+        "Brand.Tertiary": "533f4962f639da36e7001d7d811f99d961ba6817",
+        "Buttons.SecondaryDefault": "7ce20c63f909703696e9d3c213bff6a5f6c385e3",
+        "Buttons.SecondaryHover": "38d58894ec9fac12f4e75d11fd0ad5a6b88ba7d5",
+        "Buttons.SuttonSecondaryActive": "fb3da670e1af3d21bc619402ee8f383f67e168ec",
+        "Surfaces.Surface4": "37477e7a64adf7de95ad8e7aa6c57c4c47b51a2e",
+        "Surfaces.Surface3": "eecb79f48f7443dcb9d9103a074edb054b9f2ece",
+        "Surfaces.Surface2": "fdd97fdc9ae2e583638fe4f3ed350d47c181b616",
+        "Surfaces.Surface1": "6cfc683c46451e382793b512ad372783bc78f0a0",
+        "Surfaces.SurfaceError": "001c13613feace110875a2e4a15a1013badaedae",
+        "TextColors.text-default": "cfef02839dd6522ac3932701468719e68cde2f73",
+        "TextColors.OnSurface1": "d1819b0cfbb941d3eae530e84fa6d731a6a9512d",
+        "TextColors.OnSurface2": "ac12c5b235f251890b962f023f4a2b9ced197199",
+        "TextColors.OnSurface3": "86acf8fc1a890378d20cc1cd16caa4baf875ff94",
+        "TextColors.OnSurface4": "6e19e80d38c85d78520d45effe3813455331f983",
+        "TextColors.Active": "57c408640919fbaa85408951e7aa1a91c14048ab",
+        "Grounds.Front": "fc8ca9aefe997c0b6efd0316d84b3b54c0c29713",
+        "Grounds.Back": "94b702c57b94ed4f8c757a1343850ada698a6ad2",
+        "Grounds.Neutral1": "57b5806e5eea698f4d457ab17732ae10680670fc",
+        "Grounds.Neutral2": "7bf9931e5b31cb497ed6e9fbc765072d382b43b1",
+        "Grounds.Neutral3": "bba29ef3bf11bf06067e78ab734b0d075adbcf86",
+        "Grounds.Neutral4": "ddcd9daa26f2bd1d8935713dc18e2877c8d2e45c",
+        "Base.Rem": "40d0fff9daaed0bd38c8e50326cd03be5259539e"
+      },
+      "$figmaCollectionId": "VariableCollectionId:137:4537",
+      "$figmaModeId": "137:0"
     },
     {
       "id": "89ae8bbfc0f86c48b72a881f179721fbd643cad0",
       "name": "light",
-      "$figmaStyleReferences": {},
+      "$figmaStyleReferences": {
+        "Brand.Primary": "S:24918adbd02a1c1f5a0b6ce88a819f91bd29bc35,",
+        "Brand.Secondary": "S:0ef6fa715bf60468da3b78b6659524c66f6977be,",
+        "Brand.Tertiary": "S:3f113c9f84c1635f15ee11786891744fae5578d3,",
+        "Buttons.SecondaryDefault": "S:3bc5b7307565de8c8f7c394431c6ecefa2b6deb1,",
+        "Buttons.SecondaryHover": "S:1d22e393a82ec79fe1e53f2d55a6d22c2a8e6f09,",
+        "Buttons.SuttonSecondaryActive": "S:bf535ff6956aa7469e553ad621d06b11ff4a07c6,",
+        "Surfaces.Surface1": "S:7d84f3bb7fe473923b6b3ff122fabb581badb259,",
+        "Surfaces.Surface2": "S:31dff48dff0cfd987620570c20923a26cfb090a4,",
+        "Surfaces.Surface3": "S:6fc2bb83397c29878a1c952223964b5e5e52e430,",
+        "Surfaces.Surface4": "S:ca7f30e72e44f3041d9e127bf3f1b632d960e90b,",
+        "Surfaces.SurfaceError": "S:80a32c61a0107a7e31023f8e910838c3ac4b81ac,",
+        "TextColors.OnLighterGrund": "S:14cac1e5d4443d33ed11d986c1ce322364a5f19e,",
+        "TextColors.OnDarkerGround": "S:61178dbf10d477cda1f90bd9a2ea5260847574bd,",
+        "TextColors.OnSurface1": "S:a44431a6162b71c6a873137136f4fb1bf3e841f5,",
+        "TextColors.OnSurface2": "S:f44f455766c1dc01f5f499d1dd5252aec41b2fb9,",
+        "TextColors.OnSurface3": "S:302c296a2ca10cb5ca4181e03b2d2341972c9bdb,",
+        "TextColors.OnSurface4": "S:f173a1fad1852f297e54bdc9d4bf1a640d15aab6,",
+        "TextColors.IsActive": "S:5a3dbe41a5be84ba7b187fc1b9de5e21f23d31a1,",
+        "Grounds.Front": "S:2bda8d5656e4d59875714c9dd4a60ba99b92a1d1,",
+        "Grounds.Back": "S:f8b48b9b19cd9de36d9917547375103b2984bff6,",
+        "Grounds.Neutral1": "S:c76f26118c95b6147c6faee08e8464e97824b84c,",
+        "Grounds.Neutral2": "S:cbede1efec94f165f3526bbc6403a592aa4b2b28,",
+        "Grounds.Neutral3": "S:d1648c0217d903116950d441ddbdf78cd23e5503,",
+        "Grounds.Neutral4": "S:bfcfa66edfe952223bfec4deff3357f7e494ec38,",
+        "IconColors.Default": "S:9a1372bb877a9eac101c42849392121d60fc3c94,",
+        "IconColors.Active": "S:4383552022cb7337b5712505c9bcf3367ea8ae06,",
+        "IconColors.InActive": "S:b4149ee2fcc848dce59dc7b235b7a5d25fd76db7,",
+        "TextColors.Headlines": "S:d276586966e40b09037b560c1e85b5a7ed06b5ee,",
+        "Label.XS": "S:baee655f95d0c1e543b79e52fea28fce8e5cfd80,",
+        "Label.MD": "S:c7f077365e630d8e291223bc1cb18426514cd80b,",
+        "Label.LG": "S:e2bd20c84783dcaaeddd7a4a2e06d2c4006376e1,",
+        "Titel.XS": "S:5433d6b88c11a035dce1cdfa54275194516e99c5,",
+        "Titel.MD": "S:d926278d79e73e63eedc15718b5409b28ab7f966,",
+        "Body.SM": "S:19d483382d772c947543652e9fbb41d435d0f89a,",
+        "Interactions.TextLink": "S:f255dae369cc11a7712b991a8eb860efd7d93494,",
+        "TextColors.Reserved": "S:0731b939b6ad7588a44727cbc30aaa423c415982,",
+        "Gardients.Header": "S:c455f4563f54445896eb13386a91dd3a9fd37572,"
+      },
       "selectedTokenSets": {
         "Brands/Rothschild/Corp": "enabled",
         "Brands/Rothschild/GUI": "enabled",
-        "Styles": "source",
-        "GUI": "source"
+        "Styles": "enabled",
+        "GUI": "enabled"
       },
+      "$figmaVariableReferences": {
+        "Brand.Primary": "c5b22c9dea24a2e6a58ef349117e6a7bc8b7e60e",
+        "Brand.Secondary": "ce2e32e4ef7145f8c938d06178ebd919f097f575",
+        "Brand.Tertiary": "feb4da81cf060d2dbd7e5e2f762ececd94ff305c",
+        "Buttons.SecondaryDefault": "b49bac21dff98f7c7303ae535b7273117a3c01b4",
+        "Buttons.SecondaryHover": "9898eb84344fb29f8876e09e6afac591de5a1e70",
+        "Buttons.SuttonSecondaryActive": "5ba406da6c5518501d7b4d6286d48997a43262af",
+        "Surfaces.Surface1": "5327351695ffdb9b92055d1f8cfae1dc99643e73",
+        "Surfaces.Surface2": "4a35be91fef81c843be591bcc7f5f2cdd1f1208d",
+        "Surfaces.Surface3": "aea82c12ab0786606ef848d6a75b1e5909251990",
+        "Surfaces.Surface4": "9bddde8fe58310cf0323675adc095680834b282a",
+        "Surfaces.SurfaceError": "f7c7a44997d20516924e41f56f2f7d86a7786bac",
+        "TextColors.OnLighterGrund": "80c732b17fb81dfcdab144a80ff727eb2b98d32c",
+        "TextColors.OnDarkerGround": "df0e3a76c9e2bf332da2cfc6b250d6c644487732",
+        "TextColors.OnSurface1": "8cc5a82d5f8d845e63ba9ac65648f34d6bf42796",
+        "TextColors.OnSurface2": "b7e919ff27f410c7cee2df668fb0bd65800d8bf7",
+        "TextColors.OnSurface3": "69627fa592e36e8f0fbdf3229c660fdcb7933d16",
+        "TextColors.OnSurface4": "f1ebdb482e4650bb0e23d93894ed2bbda5fed960",
+        "TextColors.IsActive": "72013fa690406f0be27855432d92d01f7ad54ca0",
+        "Grounds.Front": "992c95b86223065335528aa7b9f9b6b66ba849f5",
+        "Grounds.Back": "f32d6505cc9927d04547109f6b17c2bcdcae53e1",
+        "Grounds.Neutral1": "27a43758e60863a264c8cc36400c6e9418e4e607",
+        "Grounds.Neutral2": "943d179c54e730bd406dd9586af77c4815c97351",
+        "Grounds.Neutral3": "dd55dc53dda66f6936d8d881c2b4cdbb665ffb0d",
+        "Grounds.Neutral4": "70927809be717b320ad37a72bb90063d61c0ea68",
+        "Base.Rem": "962fbf4c2f4d7850a85024849005f8450d09621c"
+      },
+      "$figmaCollectionId": "VariableCollectionId:137:4563",
+      "$figmaModeId": "137:1",
       "group": "rothschild"
     }
   ],
