@@ -1,71 +1,4 @@
 {
-  "Layout": {
-    "Containers": {
-      "Dock": {
-        "value": "7rem",
-        "type": "dimension"
-      },
-      "MenuLeft": {
-        "value": "14rem",
-        "type": "dimension"
-      },
-      "MenuRight": {
-        "value": "20rem",
-        "type": "dimension"
-      },
-      "ChatWrap": {
-        "value": "52rem",
-        "type": "dimension"
-      },
-      "Body": {
-        "value": "90rem",
-        "type": "dimension"
-      }
-    },
-    "Base": {
-      "Spacing": {
-        "value": "0.938rem",
-        "type": "dimension",
-        "description": "Rotschild has a 5, 15, 20, ... Spacing numberrow - interpretated in rem"
-      },
-      "TextRem": {
-        "value": "16px",
-        "type": "dimension"
-      }
-    },
-    "Spacing": {
-      "XS": {
-        "value": "{Base.Spacing} /3",
-        "type": "spacing"
-      },
-      "SM": {
-        "value": "{Base.Spacing}",
-        "type": "spacing"
-      },
-      "MD": {
-        "value": "{Base.Spacing} *2",
-        "type": "spacing"
-      },
-      "LG": {
-        "value": "{Base.Spacing} *3",
-        "type": "spacing"
-      },
-      "XL": {
-        "value": "{Base.Spacing} *4",
-        "type": "spacing"
-      }
-    },
-    "Icons": {
-      "SM": {
-        "value": "1.5rem",
-        "type": "dimension"
-      },
-      "LG": {
-        "value": "2.5rem",
-        "type": "dimension"
-      }
-    }
-  },
   "Styles": {
     "Brand": {
       "Primary": {
@@ -282,34 +215,6 @@
       }
     },
     "Label": {
-      "MD": {
-        "value": {
-          "fontFamily": "{fontFamilies.bread}",
-          "fontWeight": "{fontWeights.reguar}",
-          "lineHeight": "{lineHeights.densed}",
-          "fontSize": "{fontSize.sm}",
-          "letterSpacing": "{letterSpacing.default}",
-          "paragraphSpacing": "{paragraphSpacing.0}",
-          "paragraphIndent": "{distances.0}",
-          "textCase": "{TextCases.None}",
-          "textDecoration": "{TextDecorations.None}"
-        },
-        "type": "typography"
-      },
-      "LG": {
-        "value": {
-          "fontFamily": "{fontFamilies.bread}",
-          "fontWeight": "{fontWeights.reguar}",
-          "lineHeight": "{lineHeights.default}*{fontSize.md}",
-          "fontSize": "{fontSize.md}",
-          "letterSpacing": "{letterSpacing.default}",
-          "paragraphSpacing": "{paragraphSpacing.0}",
-          "paragraphIndent": "{distances.0}",
-          "textCase": "{TextCases.None}",
-          "textDecoration": "{TextDecorations.None}"
-        },
-        "type": "typography"
-      },
       "XS": {
         "value": {
           "fontFamily": "{FontFamilies.Bread}",
@@ -323,47 +228,76 @@
           "paragraphIndent": "None"
         },
         "type": "typography"
-      }
-    },
-    "Titel": {
+      },
       "MD": {
         "value": {
-          "fontFamily": "{FontFamilies.Butter}",
+          "fontFamily": "{FontFamilies.Bread}",
           "fontWeight": "{FontWeights.Reguar}",
-          "fontSize": "{FontSizes.LG}",
+          "lineHeight": "{FontSizes.MD}",
+          "fontSize": "{FontSizes.MD}",
           "letterSpacing": "{LetterSpacings.Normal}",
-          "paragraphSpacing": "{ParagraphSpacings.Default}",
-          "paragraphIndent": "None",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "paragraphIndent": "0",
           "textCase": "{TextCases.None}",
-          "textDecoration": "{TextDecorations.None}",
-          "lineHeight": "{LineHeights.Denced}*{FontSizes.LG}"
+          "textDecoration": "{TextDecorations.None}"
         },
         "type": "typography"
       },
-      "XS": {
+      "LG": {
         "value": {
-          "fontFamily": "{fontFamilies.display}",
-          "fontWeight": "{fontWeights.reguar}",
-          "lineHeight": "{lineHeights.default}*{fontSize.lg}",
-          "fontSize": "{fontSize.XS}",
-          "letterSpacing": "{letterSpacing.default}",
-          "paragraphSpacing": "{paragraphSpacing.0}",
-          "paragraphIndent": "{distances.0}",
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{FontSizes.MD}",
+          "fontSize": "{FontSizes.MD}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "paragraphIndent": "0",
           "textCase": "{TextCases.None}",
           "textDecoration": "{TextDecorations.None}"
         },
         "type": "typography"
       }
     },
-    "Body": {
-      "MD": {
+    "Titel": {
+      "XS": {
         "value": {
           "fontFamily": "{FontFamilies.Bread}",
           "fontWeight": "{FontWeights.Reguar}",
-          "lineHeight": "{FontSizes.MD}*{LineHeights.Default}",
+          "lineHeight": "{LineHeights.Denced}*{FontSizes.XS}",
+          "fontSize": "{FontSizes.XS}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "paragraphIndent": "0",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      },
+      "MD": {
+        "value": {
+          "fontFamily": "{FontFamilies.Butter}",
+          "fontWeight": "{FontWeights.Reguar}",
           "fontSize": "{FontSizes.MD}",
           "letterSpacing": "{LetterSpacings.Normal}",
-          "paragraphSpacing": "{ParagraphSpacings.Default}",
+          "paragraphSpacing": "{ParagraphSpacings.Normal}",
+          "paragraphIndent": "None",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}",
+          "lineHeight": "{LineHeights.Denced}*{FontSizes.MD}"
+        },
+        "type": "typography",
+        "description": "Chat Questions"
+      }
+    },
+    "Body": {
+      "SM": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{FontSizes.SM}*{LineHeights.Normal}",
+          "fontSize": "{FontSizes.SM}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.Normal}",
           "paragraphIndent": "None",
           "textCase": "{TextCases.None}",
           "textDecoration": "{TextDecorations.None}"
@@ -374,13 +308,13 @@
     "Interactions": {
       "TextLink": {
         "value": {
-          "fontFamily": "{fontFamilies.bread}",
-          "fontWeight": "{fontWeights.reguar}",
-          "lineHeight": "{lineHeights.default}",
-          "fontSize": "{fontSize.sm}",
-          "letterSpacing": "{letterSpacing.default}",
-          "paragraphSpacing": "{paragraphSpacing.0}",
-          "paragraphIndent": "{distances.0}",
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{LineHeights.Normal}*{FontSizes.SM}",
+          "fontSize": "{FontSizes.SM}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.Normal}",
+          "paragraphIndent": "0",
           "textCase": "{TextCases.None}",
           "textDecoration": "{TextDecorations.None}"
         },
@@ -418,17 +352,17 @@
         "value": "Regular",
         "type": "fontWeights"
       },
-      "Medium": {
-        "value": "Medium",
+      "SemiBold": {
+        "value": "SemiBold",
         "type": "fontWeights"
       }
     },
     "LineHeights": {
       "Denced": {
-        "value": "1",
+        "value": "1.29",
         "type": "lineHeights"
       },
-      "Default": {
+      "Normal": {
         "value": "1.8",
         "type": "lineHeights"
       },
@@ -443,11 +377,12 @@
         "type": "fontSizes"
       },
       "SM": {
-        "value": "1rem",
-        "type": "fontSizes"
+        "value": "1.25rem",
+        "type": "fontSizes",
+        "description": "Body Chat "
       },
       "MD": {
-        "value": "1.25rem",
+        "value": "1.75rem",
         "type": "fontSizes"
       },
       "LG": {
@@ -478,7 +413,7 @@
       }
     },
     "ParagraphSpacings": {
-      "Default": {
+      "Normal": {
         "value": "2.813rem",
         "type": "paragraphSpacing"
       },
@@ -499,6 +434,221 @@
       "InActive": {
         "value": "{Grounds.Neutral3}",
         "type": "color"
+      }
+    }
+  },
+  "GUI": {
+    "Services": {
+      "Menu": {
+        "Rail": {
+          "value": {
+            "fill": "{Surfaces.Surface2}",
+            "width": "{Containers.Dock}"
+          },
+          "type": "composition"
+        },
+        "Left": {
+          "value": {
+            "fill": "{Surfaces.Surface2}",
+            "width": "{Containers.MenuRight}",
+            "paddingTop": "6* {Base.Rem}",
+            "paddingBottom": "2* {Base.Rem}",
+            "horizontalPadding": "2* {Base.Rem}",
+            "itemSpacing": "2* {Base.Rem}"
+          },
+          "type": "composition"
+        },
+        "Right": {
+          "value": {
+            "fill": "{Surfaces.Surface1}",
+            "width": "{Containers.MenuLeft}",
+            "paddingTop": "4* {Base.Rem}",
+            "paddingBottom": "0"
+          },
+          "type": "composition"
+        }
+      },
+      "MenuLeftActions": {
+        "value": {
+          "fill": "{TextColors.OnSurface4}"
+        },
+        "type": "composition"
+      },
+      "History": {
+        "Item": {
+          "value": {
+            "paddingLeft": "{Spacing.XS}"
+          },
+          "type": "composition"
+        }
+      },
+      "Dock": {
+        "value": {
+          "width": "{Containers.Dock}",
+          "fill": "{Surfaces.Surface2}"
+        },
+        "type": "composition"
+      }
+    },
+    "Main": {
+      "ChatStack": {
+        "value": {
+          "width": "{Containers.ChatWrap}",
+          "fill": "none"
+        },
+        "type": "composition"
+      },
+      "ChatBox": {
+        "Container": {
+          "value": {
+            "width": "{Containers.ChatWrap}",
+            "fill": "{Surfaces.Surface4}"
+          },
+          "type": "composition"
+        },
+        "InputContainer": {
+          "value": {
+            "spacing": "0",
+            "itemSpacing": "{Spacing.XS}"
+          },
+          "type": "composition"
+        },
+        "Input": {
+          "value": {
+            "itemSpacing": "{Spacing.XS}",
+            "verticalPadding": "{Spacing.SM}",
+            "paddingLeft": "{Spacing.XS}",
+            "paddingRight": "{Spacing.SM}"
+          },
+          "type": "composition"
+        },
+        "Value": {
+          "value": {
+            "typography": "{Label.MD}"
+          },
+          "type": "composition"
+        },
+        "Submit": {
+          "value": {
+            "sizing": "{Icons.LG}"
+          },
+          "type": "composition"
+        },
+        "Helper": {
+          "value": {
+            "paddingLeft": "{Spacing.XS}",
+            "itemSpacing": "{Spacing.XS}"
+          },
+          "type": "composition"
+        }
+      },
+      "Chat": {
+        "ChatItemContainer": {
+          "value": {
+            "spacing": "{Spacing.MD}"
+          },
+          "type": "composition"
+        },
+        "Thread": {
+          "value": {
+            "itemSpacing": "0"
+          },
+          "type": "composition"
+        },
+        "Error": {
+          "value": {
+            "spacing": "{Spacing.MD}",
+            "fill": "{Surfaces.SurfaceError}"
+          },
+          "type": "composition"
+        }
+      }
+    },
+    "Base": {
+      "Spacing": {
+        "value": "0.9375rem",
+        "type": "dimension",
+        "description": "Rotschild has a 5, 15, 20, ... Spacing numberrow - interpretated in rem"
+      },
+      "TextRem": {
+        "value": "16px",
+        "type": "dimension"
+      }
+    },
+    "Containers": {
+      "Dock": {
+        "value": "7rem",
+        "type": "dimension"
+      },
+      "MenuLeft": {
+        "value": "14rem",
+        "type": "dimension"
+      },
+      "MenuRight": {
+        "value": "20rem",
+        "type": "dimension"
+      },
+      "ChatWrap": {
+        "value": "52rem",
+        "type": "dimension"
+      },
+      "Body": {
+        "value": "90rem",
+        "type": "dimension"
+      }
+    },
+    "Spacing": {
+      "XS": {
+        "value": "{Base.Spacing} /3",
+        "type": "spacing"
+      },
+      "SM": {
+        "value": "{Base.Spacing}",
+        "type": "spacing"
+      },
+      "MD": {
+        "value": "{Base.Spacing} *2",
+        "type": "spacing"
+      },
+      "LG": {
+        "value": "{Base.Spacing} *3",
+        "type": "spacing"
+      },
+      "XL": {
+        "value": "{Base.Spacing} *4",
+        "type": "spacing"
+      }
+    },
+    "Icons": {
+      "SM": {
+        "value": "1.5rem",
+        "type": "dimension"
+      },
+      "LG": {
+        "value": "2.5rem",
+        "type": "dimension"
+      }
+    },
+    "BorderWidths": {
+      "SM": {
+        "value": "1",
+        "type": "borderWidth"
+      }
+    },
+    "BorderRadiuses": {
+      "None": {
+        "value": "0",
+        "type": "borderRadius"
+      }
+    },
+    "Borders": {
+      "Inputs": {
+        "value": {
+          "color": "{Grounds.Front}",
+          "width": "0.063rem",
+          "style": "solid"
+        },
+        "type": "border"
       }
     }
   },
@@ -800,11 +950,13 @@
     },
     "Main": {
       "ChatBox": {
-        "value": {
-          "width": "{Containers.ChatWrap}",
-          "fill": "{Surfaces.Surface4}"
-        },
-        "type": "composition"
+        "Container": {
+          "value": {
+            "width": "{Containers.ChatWrap}",
+            "fill": "{Surfaces.Surface4}"
+          },
+          "type": "composition"
+        }
       },
       "ChatStack": {
         "value": {
@@ -1105,11 +1257,13 @@
         "type": "composition"
       },
       "ChatBox": {
-        "value": {
-          "width": "{Containers.ChatWrap}",
-          "fill": "{Surfaces.Surface4}"
-        },
-        "type": "composition"
+        "Container": {
+          "value": {
+            "width": "{Containers.ChatWrap}",
+            "fill": "{Surfaces.Surface4}"
+          },
+          "type": "composition"
+        }
       }
     },
     "Input": {
@@ -1144,9 +1298,9 @@
       "name": "light",
       "$figmaStyleReferences": {},
       "selectedTokenSets": {
-        "Layout": "source",
         "Brands/Klab/GUI": "enabled",
-        "Brands/Klab/Corp": "enabled"
+        "Brands/Klab/Corp": "enabled",
+        "GUI": "source"
       },
       "group": "k-lab"
     },
@@ -1155,18 +1309,18 @@
       "name": "light",
       "$figmaStyleReferences": {},
       "selectedTokenSets": {
-        "Layout": "source",
         "Brands/Rothschild/Corp": "enabled",
         "Brands/Rothschild/GUI": "enabled",
-        "Styles": "source"
+        "Styles": "source",
+        "GUI": "source"
       },
       "group": "rothschild"
     }
   ],
   "$metadata": {
     "tokenSetOrder": [
-      "Layout",
       "Styles",
+      "GUI",
       "Brands/Klab/Corp",
       "Brands/Klab/GUI",
       "Brands/Rothschild/Corp",
