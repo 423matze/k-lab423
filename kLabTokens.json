@@ -14,45 +14,491 @@
         "type": "dimension"
       },
       "ChatWrap": {
-        "value": "52px",
+        "value": "52rem",
         "type": "dimension"
       },
       "Body": {
         "value": "90rem",
         "type": "dimension"
-      },
-      "Test": {
-        "value": "10rem",
-        "type": "dimension"
       }
     },
     "Base": {
-      "Space": {
-        "value": "16px",
+      "Spacing": {
+        "value": "0.938rem",
         "type": "dimension",
-        "description": "Rotschild has a 5, 15, 20, ... Spacing numberrow"
+        "description": "Rotschild has a 5, 15, 20, ... Spacing numberrow - interpretated in rem"
+      },
+      "TextRem": {
+        "value": "16px",
+        "type": "dimension"
       }
     },
     "Spacing": {
       "XS": {
-        "value": "{Base.Space} /3",
+        "value": "{Base.Spacing} /3",
         "type": "spacing"
       },
       "SM": {
-        "value": "{Base.Space}",
+        "value": "{Base.Spacing}",
         "type": "spacing"
       },
       "MD": {
-        "value": "{Base.Space} *2",
+        "value": "{Base.Spacing} *2",
         "type": "spacing"
       },
       "LG": {
-        "value": "{Base.Space} *3",
+        "value": "{Base.Spacing} *3",
         "type": "spacing"
       },
       "XL": {
-        "value": "{Base.Space} *4",
+        "value": "{Base.Spacing} *4",
         "type": "spacing"
+      }
+    },
+    "Icons": {
+      "SM": {
+        "value": "1.5rem",
+        "type": "dimension"
+      },
+      "LG": {
+        "value": "2.5rem",
+        "type": "dimension"
+      }
+    }
+  },
+  "Styles": {
+    "Brand": {
+      "Primary": {
+        "value": "#1B3156",
+        "type": "color",
+        "description": "30B6FF"
+      },
+      "Secondary": {
+        "value": "#CC9F53",
+        "type": "color",
+        "description": "1F8EB1"
+      },
+      "Tertiary": {
+        "value": "#EFECEA",
+        "type": "color",
+        "description": "383838"
+      }
+    },
+    "Buttons": {
+      "SecondaryDefault": {
+        "value": "#39708400",
+        "type": "color",
+        "description": "387084"
+      },
+      "SecondaryHover": {
+        "value": "#397084",
+        "type": "color",
+        "description": "387084"
+      },
+      "SuttonSecondaryActive": {
+        "value": "#1f8fb2",
+        "type": "color",
+        "description": "1F8FB2"
+      }
+    },
+    "Surfaces": {
+      "Surface1": {
+        "value": "{Grounds.Back}",
+        "type": "color"
+      },
+      "Surface2": {
+        "value": "{Brand.Primary}",
+        "type": "color",
+        "description": "252423",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "darken",
+              "value": "0.2",
+              "space": "hsl"
+            }
+          }
+        }
+      },
+      "Surface3": {
+        "value": "{Brand.Primary}",
+        "type": "color",
+        "description": "252423",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "darken",
+              "value": "0.2",
+              "space": "hsl"
+            }
+          }
+        }
+      },
+      "Surface4": {
+        "value": "{Brand.Tertiary}",
+        "type": "color"
+      },
+      "SurfaceError": {
+        "value": "#0a618f",
+        "type": "color",
+        "description": "09608F"
+      }
+    },
+    "TextColors": {
+      "OnLighterGrund": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "description": "D9D7DD"
+      },
+      "OnDarkerGround": {
+        "value": "#fff",
+        "type": "color"
+      },
+      "OnSurface1": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.0001",
+              "space": "hsl",
+              "color": "{Surfaces.Body} "
+            }
+          }
+        }
+      },
+      "OnSurface2": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.0001",
+              "space": "hsl",
+              "color": "{Surfaces.Body} "
+            }
+          }
+        }
+      },
+      "OnSurface3": {
+        "value": "{Grounds.Back}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.009",
+              "space": "hsl",
+              "color": "{Surfaces.Surface3} "
+            }
+          }
+        }
+      },
+      "OnSurface4": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.001",
+              "space": "hsl",
+              "color": "{Surfaces.Surface4} "
+            }
+          }
+        }
+      },
+      "IsActive": {
+        "value": "{Brand.Secondary}",
+        "type": "color"
+      }
+    },
+    "Grounds": {
+      "Front": {
+        "value": "#000",
+        "type": "color"
+      },
+      "Back": {
+        "value": "#fff",
+        "type": "color"
+      },
+      "Neutral1": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.99",
+              "space": "hsl",
+              "color": "{Grounds.Back} "
+            }
+          }
+        }
+      },
+      "Neutral2": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.75",
+              "space": "hsl",
+              "color": "{Grounds.Back} "
+            }
+          }
+        }
+      },
+      "Neutral3": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.6",
+              "space": "hsl",
+              "color": "{Grounds.Back} "
+            }
+          }
+        }
+      },
+      "Neutral4": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.2",
+              "space": "hsl",
+              "color": "{Grounds.Back} "
+            }
+          }
+        }
+      }
+    },
+    "Label": {
+      "MD": {
+        "value": {
+          "fontFamily": "{fontFamilies.bread}",
+          "fontWeight": "{fontWeights.reguar}",
+          "lineHeight": "{lineHeights.densed}",
+          "fontSize": "{fontSize.sm}",
+          "letterSpacing": "{letterSpacing.default}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{distances.0}",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      },
+      "LG": {
+        "value": {
+          "fontFamily": "{fontFamilies.bread}",
+          "fontWeight": "{fontWeights.reguar}",
+          "lineHeight": "{lineHeights.default}*{fontSize.md}",
+          "fontSize": "{fontSize.md}",
+          "letterSpacing": "{letterSpacing.default}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{distances.0}",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      },
+      "XS": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{LineHeights.Denced}*{FontSizes.XS}",
+          "fontSize": "{FontSizes.XS}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}",
+          "paragraphIndent": "None"
+        },
+        "type": "typography"
+      }
+    },
+    "Titel": {
+      "MD": {
+        "value": {
+          "fontFamily": "{FontFamilies.Butter}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "fontSize": "{FontSizes.LG}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.Default}",
+          "paragraphIndent": "None",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}",
+          "lineHeight": "{LineHeights.Denced}*{FontSizes.LG}"
+        },
+        "type": "typography"
+      },
+      "XS": {
+        "value": {
+          "fontFamily": "{fontFamilies.display}",
+          "fontWeight": "{fontWeights.reguar}",
+          "lineHeight": "{lineHeights.default}*{fontSize.lg}",
+          "fontSize": "{fontSize.XS}",
+          "letterSpacing": "{letterSpacing.default}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{distances.0}",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      }
+    },
+    "Body": {
+      "MD": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{FontSizes.MD}*{LineHeights.Default}",
+          "fontSize": "{FontSizes.MD}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.Default}",
+          "paragraphIndent": "None",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      }
+    },
+    "Interactions": {
+      "TextLink": {
+        "value": {
+          "fontFamily": "{fontFamilies.bread}",
+          "fontWeight": "{fontWeights.reguar}",
+          "lineHeight": "{lineHeights.default}",
+          "fontSize": "{fontSize.sm}",
+          "letterSpacing": "{letterSpacing.default}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{distances.0}",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      }
+    },
+    "TextCases": {
+      "None": {
+        "value": "none",
+        "type": "textCase"
+      }
+    },
+    "TextDecorations": {
+      "None": {
+        "value": "none",
+        "type": "textDecoration"
+      }
+    },
+    "FontFamilies": {
+      "Butter": {
+        "value": "Calluna",
+        "type": "fontFamilies"
+      },
+      "Bread": {
+        "value": "Source Sans Pro",
+        "type": "fontFamilies"
+      }
+    },
+    "FontWeights": {
+      "Light": {
+        "value": "Light",
+        "type": "fontWeights"
+      },
+      "Reguar": {
+        "value": "Regular",
+        "type": "fontWeights"
+      },
+      "Medium": {
+        "value": "Medium",
+        "type": "fontWeights"
+      }
+    },
+    "LineHeights": {
+      "Denced": {
+        "value": "1",
+        "type": "lineHeights"
+      },
+      "Default": {
+        "value": "1.8",
+        "type": "lineHeights"
+      },
+      "Wide": {
+        "value": "2.3",
+        "type": "lineHeights"
+      }
+    },
+    "FontSizes": {
+      "XS": {
+        "value": "0.875rem",
+        "type": "fontSizes"
+      },
+      "SM": {
+        "value": "1rem",
+        "type": "fontSizes"
+      },
+      "MD": {
+        "value": "1.25rem",
+        "type": "fontSizes"
+      },
+      "LG": {
+        "value": "2.5rem",
+        "type": "fontSizes"
+      }
+    },
+    "LetterSpacings": {
+      "Condenced": {
+        "value": "-2%",
+        "type": "letterSpacing"
+      },
+      "Normal": {
+        "value": "0%",
+        "type": "letterSpacing"
+      },
+      "Narrow": {
+        "value": "-1%",
+        "type": "letterSpacing"
+      },
+      "Widened": {
+        "value": "1%",
+        "type": "letterSpacing"
+      },
+      "Expanded": {
+        "value": "2.423%",
+        "type": "letterSpacing"
+      }
+    },
+    "ParagraphSpacings": {
+      "Default": {
+        "value": "2.813rem",
+        "type": "paragraphSpacing"
+      },
+      "None": {
+        "value": "0",
+        "type": "paragraphSpacing"
+      }
+    },
+    "IconColors": {
+      "Default": {
+        "value": "{TextColors.OnLighterGrund}",
+        "type": "color"
+      },
+      "Active": {
+        "value": "{Brand.Secondary}",
+        "type": "color"
+      },
+      "InActive": {
+        "value": "{Grounds.Neutral3}",
+        "type": "color"
       }
     }
   },
@@ -228,13 +674,11 @@
     "Grounds": {
       "Front": {
         "value": "#fefffe",
-        "type": "color",
-        "$extensions": {}
+        "type": "color"
       },
       "Back": {
         "value": "#000001",
-        "type": "color",
-        "$extensions": {}
+        "type": "color"
       },
       "Neutral1": {
         "value": "{Grounds.Front}",
@@ -243,7 +687,7 @@
           "studio.tokens": {
             "modify": {
               "type": "mix",
-              "value": "0.99",
+              "value": "0.92",
               "space": "hsl",
               "color": "{Grounds.Back} "
             }
@@ -257,7 +701,7 @@
           "studio.tokens": {
             "modify": {
               "type": "mix",
-              "value": "0.75",
+              "value": "0.88",
               "space": "hsl",
               "color": "{Grounds.Back} "
             }
@@ -271,7 +715,7 @@
           "studio.tokens": {
             "modify": {
               "type": "mix",
-              "value": "0.6",
+              "value": "0.83",
               "space": "hsl",
               "color": "{Grounds.Back} "
             }
@@ -285,7 +729,7 @@
           "studio.tokens": {
             "modify": {
               "type": "mix",
-              "value": "0.2",
+              "value": "0.80",
               "space": "hsl",
               "color": "{Grounds.Back} "
             }
@@ -301,11 +745,86 @@
       }
     }
   },
-  "Brands/Klab/GUI": {},
+  "Brands/Klab/GUI": {
+    "Services": {
+      "Menu": {
+        "Rail": {
+          "value": {
+            "fill": "{Surfaces.Surface2}",
+            "width": "{Containers.Dock}"
+          },
+          "type": "composition"
+        },
+        "Left": {
+          "value": {
+            "fill": "{Surfaces.Surface2}",
+            "width": "{Containers.MenuRight}",
+            "paddingTop": "6* {Base.Rem}",
+            "paddingBottom": "2* {Base.Rem}",
+            "horizontalPadding": "2* {Base.Rem}",
+            "itemSpacing": "2* {Base.Rem}"
+          },
+          "type": "composition"
+        },
+        "Right": {
+          "value": {
+            "fill": "{Surfaces.Surface1}",
+            "width": "{Containers.MenuLeft}",
+            "paddingTop": "4* {Base.Rem}",
+            "paddingBottom": "0"
+          },
+          "type": "composition"
+        }
+      },
+      "MenuLeftActions": {
+        "value": {
+          "fill": "{TextColors.OnSurface4}"
+        },
+        "type": "composition"
+      },
+      "History": {
+        "Item": {
+          "value": {
+            "paddingLeft": "{Spacing.XS}"
+          },
+          "type": "composition"
+        }
+      },
+      "Dock": {
+        "value": {
+          "width": "{Containers.Dock}",
+          "fill": "{Surfaces.Surface2}"
+        },
+        "type": "composition"
+      }
+    },
+    "Main": {
+      "ChatBox": {
+        "value": {
+          "width": "{Containers.ChatWrap}",
+          "fill": "{Surfaces.Surface4}"
+        },
+        "type": "composition"
+      },
+      "ChatStack": {
+        "value": {
+          "width": "{Containers.ChatWrap}",
+          "fill": "none"
+        },
+        "type": "composition"
+      }
+    },
+    "Base": {
+      "Space": {
+        "value": "16px",
+        "type": "dimension"
+      }
+    }
+  },
   "Brands/Rothschild/Corp": {
     "Brand": {
       "Primary": {
-        "value": "#2E3E80",
+        "value": "#1B3156",
         "type": "color",
         "description": "30B6FF"
       },
@@ -340,8 +859,7 @@
     "Surfaces": {
       "Surface1": {
         "value": "{Grounds.Back}",
-        "type": "color",
-        "$extensions": {}
+        "type": "color"
       },
       "Surface2": {
         "value": "{Brand.Primary}",
@@ -420,13 +938,13 @@
         }
       },
       "OnSurface3": {
-        "value": "{Grounds.Front}",
+        "value": "{Grounds.Back}",
         "type": "color",
         "$extensions": {
           "studio.tokens": {
             "modify": {
               "type": "mix",
-              "value": "0.001",
+              "value": "0.009",
               "space": "hsl",
               "color": "{Surfaces.Surface3} "
             }
@@ -455,13 +973,11 @@
     "Grounds": {
       "Front": {
         "value": "#000",
-        "type": "color",
-        "$extensions": {}
+        "type": "color"
       },
       "Back": {
         "value": "#fff",
-        "type": "color",
-        "$extensions": {}
+        "type": "color"
       },
       "Neutral1": {
         "value": "{Grounds.Front}",
@@ -557,43 +1073,68 @@
             "paddingBottom": "0"
           },
           "type": "composition"
-        }
-      },
-      "MenuLeftActions": {
-        "value": {
-          "fill": "{TextColors.OnSurface4}"
         },
-        "type": "composition"
+        "LeftActions": {
+          "value": {
+            "fill": "{TextColors.OnSurface4}"
+          },
+          "type": "composition"
+        }
       },
       "History": {
         "Item": {
           "value": {
-            "paddingLeft": "{Spacing.XS}"
+            "paddingLeft": "{Icons.SM}+ {Spacing.XS}"
+          },
+          "type": "composition"
+        },
+        "LeadingIcon": {
+          "value": {
+            "sizing": "{Icons.SM}"
           },
           "type": "composition"
         }
       }
     },
     "Main": {
-      "ChatBox": {
-        "value": {
-          "width": "{Containers.ChatWrap}",
-          "fill": "{Surfaces.Surface4}"
-        },
-        "type": "composition"
-      },
       "ChatStack": {
         "value": {
           "width": "{Containers.ChatWrap}",
           "fill": "none"
         },
         "type": "composition"
+      },
+      "ChatBox": {
+        "value": {
+          "width": "{Containers.ChatWrap}",
+          "fill": "{Surfaces.Surface4}"
+        },
+        "type": "composition"
       }
     },
-    "Base": {
-      "Space": {
-        "value": "15px",
-        "type": "dimension"
+    "Input": {
+      "Search": {
+        "Container": {
+          "value": {
+            "paddingLeft": "{Spacing.XS}",
+            "paddingRight": "{Spacing.SM}",
+            "itemSpacing": "{Spacing.SM}",
+            "fill": "{Surfaces.Surface2}"
+          },
+          "type": "composition"
+        },
+        "LeadingIcon": {
+          "value": {
+            "fill": "{TextColors.OnSurface3}"
+          },
+          "type": "composition"
+        },
+        "Value": {
+          "value": {
+            "fill": "{TextColors.OnSurface3}"
+          },
+          "type": "composition"
+        }
       }
     }
   },
@@ -616,7 +1157,8 @@
       "selectedTokenSets": {
         "Layout": "source",
         "Brands/Rothschild/Corp": "enabled",
-        "Brands/Rothschild/GUI": "enabled"
+        "Brands/Rothschild/GUI": "enabled",
+        "Styles": "source"
       },
       "group": "rothschild"
     }
@@ -624,6 +1166,7 @@
   "$metadata": {
     "tokenSetOrder": [
       "Layout",
+      "Styles",
       "Brands/Klab/Corp",
       "Brands/Klab/GUI",
       "Brands/Rothschild/Corp",
