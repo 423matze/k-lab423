@@ -146,6 +146,10 @@
       "IsActive": {
         "value": "{Brand.Secondary}",
         "type": "color"
+      },
+      "Headlines": {
+        "value": "{Brand.Primary}",
+        "type": "color"
       }
     },
     "Grounds": {
@@ -248,7 +252,7 @@
           "fontFamily": "{FontFamilies.Bread}",
           "fontWeight": "{FontWeights.Reguar}",
           "lineHeight": "{FontSizes.MD}",
-          "fontSize": "{FontSizes.MD}",
+          "fontSize": "{FontSizes.LG}",
           "letterSpacing": "{LetterSpacings.Normal}",
           "paragraphSpacing": "{ParagraphSpacings.None}",
           "paragraphIndent": "0",
