@@ -39,23 +39,9 @@
       }
     },
     "Surfaces": {
-      "Surface1": {
-        "value": "{Grounds.Back}",
+      "Surface4": {
+        "value": "{Brand.Tertiary}",
         "type": "color"
-      },
-      "Surface2": {
-        "value": "{Brand.Primary}",
-        "type": "color",
-        "description": "252423",
-        "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "darken",
-              "value": "0.2",
-              "space": "hsl"
-            }
-          }
-        }
       },
       "Surface3": {
         "value": "{Brand.Primary}",
@@ -71,8 +57,22 @@
           }
         }
       },
-      "Surface4": {
-        "value": "{Brand.Tertiary}",
+      "Surface2": {
+        "value": "{Brand.Primary}",
+        "type": "color",
+        "description": "252423",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "darken",
+              "value": "0.2",
+              "space": "hsl"
+            }
+          }
+        }
+      },
+      "Surface1": {
+        "value": "{Grounds.Back}",
         "type": "color"
       },
       "SurfaceError": {
@@ -91,30 +91,16 @@
         "value": "#fff",
         "type": "color"
       },
-      "OnSurface1": {
+      "OnSurface4": {
         "value": "{Grounds.Front}",
         "type": "color",
         "$extensions": {
           "studio.tokens": {
             "modify": {
               "type": "mix",
-              "value": "0.0001",
+              "value": "0.001",
               "space": "hsl",
-              "color": "{Surfaces.Body} "
-            }
-          }
-        }
-      },
-      "OnSurface2": {
-        "value": "{Surfaces.Surface2}",
-        "type": "color",
-        "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "mix",
-              "value": "0.95",
-              "space": "hsl",
-              "color": "{TextColors.OnDarkerGround} "
+              "color": "{Surfaces.Surface4} "
             }
           }
         }
@@ -133,16 +119,30 @@
           }
         }
       },
-      "OnSurface4": {
+      "OnSurface2": {
+        "value": "{Surfaces.Surface2}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.95",
+              "space": "hsl",
+              "color": "{TextColors.OnLighterGrund} "
+            }
+          }
+        }
+      },
+      "OnSurface1": {
         "value": "{Grounds.Front}",
         "type": "color",
         "$extensions": {
           "studio.tokens": {
             "modify": {
               "type": "mix",
-              "value": "0.001",
+              "value": "0.0001",
               "space": "hsl",
-              "color": "{Surfaces.Surface4} "
+              "color": "{Surfaces.Body} "
             }
           }
         }
@@ -490,7 +490,7 @@
         "Right": {
           "value": {
             "fill": "{Surfaces.Surface1}",
-            "width": "{Containers.MenuLeft}",
+            "width": "{Containers.MenuRight}",
             "horizontalPadding": "{Spacing.MD}",
             "itemSpacing": "{Spacing.SM}"
           },
@@ -518,9 +518,9 @@
             "itemSpacing": "{Spacing.SM}",
             "paddingLeft": "{Spacing.XS}",
             "paddingRight": "{Spacing.SM}",
-            "fill": "{Surfaces.Surface2}",
+            "fill": "{Surfaces.Surface3}",
             "borderBottom": "{Borders.Inputs}",
-            "borderColor": "{TextColors.OnSurface2}"
+            "borderColor": "{TextColors.OnSurface3}"
           },
           "type": "composition"
         }
@@ -628,11 +628,11 @@
         "type": "dimension"
       },
       "MenuLeft": {
-        "value": "14rem",
+        "value": "20rem",
         "type": "dimension"
       },
       "MenuRight": {
-        "value": "20rem",
+        "value": "14rem",
         "type": "dimension"
       },
       "ChatWrap": {
