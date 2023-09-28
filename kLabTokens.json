@@ -175,7 +175,7 @@
         "type": "color"
       },
       "Back": {
-        "value": "#fff",
+        "value": "#000",
         "type": "color"
       },
       "Neutral1": {
@@ -723,17 +723,26 @@
   "Brands/Klab/Corp": {
     "Brand": {
       "Primary": {
-        "value": "#28a9d3",
+        "value": "#a2990f",
         "type": "color",
         "description": "30B6FF"
       },
       "Secondary": {
-        "value": "#1F8EB1",
+        "value": "{Brand.Primary}",
         "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "darken",
+              "value": "0.2",
+              "space": "lch"
+            }
+          }
+        },
         "description": "1F8EB1"
       },
       "Tertiary": {
-        "value": "#383838",
+        "value": "#057fc1",
         "type": "color",
         "description": "383838"
       }
@@ -753,122 +762,56 @@
         "value": "#1f8fb2",
         "type": "color",
         "description": "1F8FB2"
+      },
+      "CTA": {
+        "value": "{Body.SM}",
+        "type": "typography"
       }
     },
     "Surfaces": {
       "Surface4": {
-        "value": "{Grounds.Neutral4}",
-        "type": "color",
-        "description": "1E1E1D",
-        "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "mix",
-              "value": "0.05",
-              "space": "hsl",
-              "color": "{Brand.Primary} "
-            }
-          }
-        }
+        "value": "{Brand.Primary}",
+        "type": "color"
       },
       "Surface3": {
-        "value": "{Grounds.Neutral3}",
+        "value": "{Brand.Secondary}",
         "type": "color",
-        "description": "252423",
-        "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "mix",
-              "value": "0.05",
-              "space": "hsl",
-              "color": "{Brand.Primary} "
-            }
-          }
-        }
+        "$extensions": {},
+        "description": "252423"
       },
       "Surface2": {
-        "value": "{Grounds.Neutral2}",
+        "value": "{Brand.Primary}",
         "type": "color",
-        "description": "252423",
         "$extensions": {
           "studio.tokens": {
             "modify": {
-              "type": "mix",
-              "value": "0.05",
-              "space": "hsl",
-              "color": "{Brand.Primary} "
+              "type": "darken",
+              "value": "0.3",
+              "space": "hsl"
             }
           }
-        }
+        },
+        "description": "252423"
       },
       "Surface1": {
-        "value": "{Grounds.Neutral1}",
-        "type": "color",
-        "description": "252423",
-        "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "mix",
-              "value": "0.02",
-              "space": "hsl",
-              "color": "{Brand.Primary} "
-            }
-          }
-        }
+        "value": "#1a1919",
+        "type": "color"
       },
       "SurfaceError": {
-        "value": "#0a618f",
+        "value": "{Surfaces.Surface2}",
         "type": "color",
         "description": "09608F"
       }
     },
     "TextColors": {
-      "text-default": {
+      "OnLighterGrund": {
         "value": "{Grounds.Front}",
         "type": "color",
         "description": "D9D7DD"
       },
-      "OnSurface1": {
-        "value": "{Grounds.Front}",
-        "type": "color",
-        "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "mix",
-              "value": "0.0001",
-              "space": "hsl",
-              "color": "{Surfaces.Surface1} "
-            }
-          }
-        }
-      },
-      "OnSurface2": {
-        "value": "{Grounds.Front}",
-        "type": "color",
-        "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "mix",
-              "value": "0.001",
-              "space": "hsl",
-              "color": "{Surfaces.Surface2} "
-            }
-          }
-        }
-      },
-      "OnSurface3": {
-        "value": "{Grounds.Front}",
-        "type": "color",
-        "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "mix",
-              "value": "0.001",
-              "space": "hsl",
-              "color": "{Surfaces.Surface3} "
-            }
-          }
-        }
+      "OnDarkerGround": {
+        "value": "#000",
+        "type": "color"
       },
       "OnSurface4": {
         "value": "{Grounds.Front}",
@@ -884,18 +827,86 @@
           }
         }
       },
-      "Active": {
-        "value": "{Brand.Secondary}",
+      "OnSurface3": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.009",
+              "space": "hsl",
+              "color": "{Surfaces.Surface3} "
+            }
+          }
+        }
+      },
+      "OnSurface2": {
+        "value": "{Surfaces.Surface2}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.95",
+              "space": "hsl",
+              "color": "{TextColors.OnLighterGrund} "
+            }
+          }
+        }
+      },
+      "OnSurface1": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.0001",
+              "space": "hsl",
+              "color": "{Surfaces.Body} "
+            }
+          }
+        }
+      },
+      "IsActive": {
+        "value": "{Brand.Tertiary}",
         "type": "color"
+      },
+      "Headlines": {
+        "value": "{Brand.Primary}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "lighten",
+              "value": "0.9",
+              "space": "lch"
+            }
+          }
+        }
+      },
+      "Reserved": {
+        "value": "{TextColors.OnSurface4}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "lighten",
+              "value": "0.42",
+              "space": "lch"
+            }
+          }
+        }
       }
     },
     "Grounds": {
       "Front": {
-        "value": "#fefffe",
+        "value": "#fff",
         "type": "color"
       },
       "Back": {
-        "value": "#000001",
+        "value": "#000",
         "type": "color"
       },
       "Neutral1": {
@@ -905,7 +916,7 @@
           "studio.tokens": {
             "modify": {
               "type": "mix",
-              "value": "0.92",
+              "value": "0.99",
               "space": "hsl",
               "color": "{Grounds.Back} "
             }
@@ -919,7 +930,7 @@
           "studio.tokens": {
             "modify": {
               "type": "mix",
-              "value": "0.88",
+              "value": "0.75",
               "space": "hsl",
               "color": "{Grounds.Back} "
             }
@@ -933,7 +944,7 @@
           "studio.tokens": {
             "modify": {
               "type": "mix",
-              "value": "0.83",
+              "value": "0.6",
               "space": "hsl",
               "color": "{Grounds.Back} "
             }
@@ -947,7 +958,7 @@
           "studio.tokens": {
             "modify": {
               "type": "mix",
-              "value": "0.80",
+              "value": "0.2",
               "space": "hsl",
               "color": "{Grounds.Back} "
             }
@@ -955,11 +966,249 @@
         }
       }
     },
-    "Base": {
-      "Rem": {
-        "value": "1rem",
-        "type": "dimension",
-        "description": "= 16px"
+    "Label": {
+      "XS": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{LineHeights.Denced}*{FontSizes.XS}",
+          "fontSize": "{FontSizes.XS}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}",
+          "paragraphIndent": "None"
+        },
+        "type": "typography"
+      },
+      "MD": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{FontSizes.MD}",
+          "fontSize": "{FontSizes.MD}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "paragraphIndent": "0",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      },
+      "LG": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{FontSizes.MD}",
+          "fontSize": "{FontSizes.LG}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "paragraphIndent": "0",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      }
+    },
+    "Titel": {
+      "XS": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{LineHeights.Denced}*{FontSizes.XS}",
+          "fontSize": "{FontSizes.XS}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "paragraphIndent": "0",
+          "textCase": "{TextCases.UpperCase}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      },
+      "MD": {
+        "value": {
+          "fontFamily": "{FontFamilies.Butter}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "fontSize": "{FontSizes.MD}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.Normal}",
+          "paragraphIndent": "None",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}",
+          "lineHeight": "{LineHeights.Denced}*{FontSizes.MD}"
+        },
+        "type": "typography",
+        "description": "Chat Questions"
+      }
+    },
+    "Body": {
+      "SM": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{FontSizes.SM}*{LineHeights.Normal}",
+          "fontSize": "{FontSizes.SM}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.Normal}",
+          "paragraphIndent": "None",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      }
+    },
+    "Interactions": {
+      "TextLink": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{LineHeights.Normal}*{FontSizes.SM}",
+          "fontSize": "{FontSizes.SM}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.Normal}",
+          "paragraphIndent": "0",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      }
+    },
+    "TextCases": {
+      "None": {
+        "value": "none",
+        "type": "textCase"
+      },
+      "UpperCase": {
+        "value": "uppercase",
+        "type": "textCase"
+      }
+    },
+    "TextDecorations": {
+      "None": {
+        "value": "none",
+        "type": "textDecoration"
+      }
+    },
+    "FontFamilies": {
+      "Butter": {
+        "value": "Roboto Slab",
+        "type": "fontFamilies"
+      },
+      "Bread": {
+        "value": "Roboto",
+        "type": "fontFamilies"
+      }
+    },
+    "FontWeights": {
+      "Light": {
+        "value": "Light",
+        "type": "fontWeights"
+      },
+      "Reguar": {
+        "value": "Regular",
+        "type": "fontWeights"
+      },
+      "SemiBold": {
+        "value": "SemiBold",
+        "type": "fontWeights"
+      }
+    },
+    "LineHeights": {
+      "Denced": {
+        "value": "1.54",
+        "type": "lineHeights"
+      },
+      "Normal": {
+        "value": "1.8",
+        "type": "lineHeights"
+      },
+      "Wide": {
+        "value": "2.3",
+        "type": "lineHeights"
+      }
+    },
+    "FontSizes": {
+      "XS": {
+        "value": "0.875rem",
+        "type": "fontSizes"
+      },
+      "SM": {
+        "value": "1.25rem",
+        "type": "fontSizes",
+        "description": "Body Chat "
+      },
+      "MD": {
+        "value": "1.75rem",
+        "type": "fontSizes"
+      },
+      "LG": {
+        "value": "2.5rem",
+        "type": "fontSizes"
+      }
+    },
+    "LetterSpacings": {
+      "Condenced": {
+        "value": "-2%",
+        "type": "letterSpacing"
+      },
+      "Normal": {
+        "value": "0%",
+        "type": "letterSpacing"
+      },
+      "Narrow": {
+        "value": "-1%",
+        "type": "letterSpacing"
+      },
+      "Widened": {
+        "value": "1%",
+        "type": "letterSpacing"
+      },
+      "Expanded": {
+        "value": "2.423%",
+        "type": "letterSpacing"
+      }
+    },
+    "ParagraphSpacings": {
+      "Normal": {
+        "value": "2.813rem",
+        "type": "paragraphSpacing"
+      },
+      "None": {
+        "value": "0",
+        "type": "paragraphSpacing"
+      }
+    },
+    "IconColors": {
+      "Default": {
+        "value": "{TextColors.OnLighterGrund}",
+        "type": "color"
+      },
+      "Active": {
+        "value": "{Brand.Secondary}",
+        "type": "color"
+      },
+      "InActive": {
+        "value": "{Grounds.Neutral3}",
+        "type": "color"
+      }
+    },
+    "Gardients": {
+      "Header": {
+        "value": "linear-gradient(180deg, {Surfaces.Surface1} 68.93%, {Gardients.alpha} 93.26%)",
+        "type": "color"
+      },
+      "alpha": {
+        "value": "{Surfaces.Surface1}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "alpha",
+              "value": "0",
+              "space": "hsl"
+            }
+          }
+        }
       }
     }
   },
@@ -976,26 +1225,25 @@
         "Left": {
           "value": {
             "fill": "{Surfaces.Surface2}",
-            "width": "{Containers.MenuRight}",
-            "paddingTop": "6* {Base.Rem}",
-            "paddingBottom": "2* {Base.Rem}",
-            "horizontalPadding": "2* {Base.Rem}",
-            "itemSpacing": "2* {Base.Rem}"
+            "width": "{Containers.MenuLeft}",
+            "horizontalPadding": "{Spacing.MD}",
+            "itemSpacing": "{Spacing.SM}"
           },
           "type": "composition"
         },
         "Right": {
           "value": {
             "fill": "{Surfaces.Surface1}",
-            "width": "{Containers.MenuLeft}",
-            "paddingTop": "4* {Base.Rem}",
-            "paddingBottom": "0"
+            "width": "{Containers.MenuRight}",
+            "horizontalPadding": "{Spacing.MD}",
+            "itemSpacing": "{Spacing.SM}"
           },
           "type": "composition"
         },
-        "LeftActions": {
+        "Header": {
           "value": {
-            "fill": "{TextColors.OnSurface4}"
+            "height": "11.375rem",
+            "paddingBottom": "{Spacing.MD}"
           },
           "type": "composition"
         }
@@ -1003,186 +1251,969 @@
       "History": {
         "Item": {
           "value": {
-            "paddingLeft": "{Spacing.XS}"
+            "paddingLeft": "{Spacing.XS}+ {Icons.SM}",
+            "paddingTop": "0px",
+            "itemSpacing": "{Spacing.SM}"
+          },
+          "type": "composition"
+        },
+        "Search": {
+          "value": {
+            "itemSpacing": "{Spacing.SM}",
+            "paddingLeft": "{Spacing.XS}",
+            "paddingRight": "{Spacing.SM}",
+            "fill": "{Surfaces.Surface3}",
+            "borderBottom": "{Borders.Inputs}",
+            "borderColor": "{TextColors.OnSurface3}"
           },
           "type": "composition"
         }
       },
-      "Dock": {
-        "value": {
-          "width": "{Containers.Dock}",
-          "fill": "{Surfaces.Surface2}"
-        },
-        "type": "composition"
-      }
-    },
-    "Main": {
-      "ChatBox": {
-        "Container": {
+      "Main": {
+        "ChatStack": {
           "value": {
             "width": "{Containers.ChatWrap}",
-            "fill": "{Surfaces.Surface4}"
+            "fill": "none"
+          },
+          "type": "composition"
+        },
+        "ChatBox": {
+          "Container": {
+            "value": {
+              "width": "{Containers.ChatWrap}",
+              "fill": "{Surfaces.Surface4}"
+            },
+            "type": "composition"
+          },
+          "InputContainer": {
+            "value": {
+              "spacing": "0",
+              "itemSpacing": "{Spacing.XS}"
+            },
+            "type": "composition"
+          },
+          "Input": {
+            "value": {
+              "itemSpacing": "{Spacing.XS}",
+              "verticalPadding": "{Spacing.SM}",
+              "paddingLeft": "{Spacing.XS}",
+              "paddingRight": "{Spacing.SM}",
+              "borderBottom": "{BorderWidths.SM}",
+              "borderColor": "{TextColors.OnSurface4}"
+            },
+            "type": "composition"
+          },
+          "Value": {
+            "value": {
+              "typography": "{Label.MD}"
+            },
+            "type": "composition"
+          },
+          "Submit": {
+            "value": {
+              "sizing": "{Icons.LG}"
+            },
+            "type": "composition"
+          },
+          "Helper": {
+            "value": {
+              "paddingLeft": "{Spacing.XS}",
+              "itemSpacing": "{Spacing.XS}"
+            },
+            "type": "composition"
+          }
+        },
+        "Chat": {
+          "ChatItemContainer": {
+            "value": {
+              "spacing": "{Spacing.MD}"
+            },
+            "type": "composition"
+          },
+          "Thread": {
+            "value": {
+              "itemSpacing": "0"
+            },
+            "type": "composition"
+          },
+          "Error": {
+            "value": {
+              "spacing": "{Spacing.MD}",
+              "fill": "{Surfaces.SurfaceError}"
+            },
+            "type": "composition"
+          }
+        }
+      },
+      "Buttons": {
+        "CTAbutton": {
+          "value": {
+            "itemSpacing": "{Spacing.SM}",
+            "spacing": "0"
           },
           "type": "composition"
         }
-      },
-      "ChatStack": {
-        "value": {
-          "width": "{Containers.ChatWrap}",
-          "fill": "none"
-        },
-        "type": "composition"
       }
     },
     "Base": {
-      "Space": {
+      "Spacing": {
+        "value": "0.9375rem",
+        "type": "dimension",
+        "description": "Rotschild has a 5, 15, 20, ... Spacing numberrow - interpretated in rem"
+      },
+      "TextRem": {
         "value": "16px",
         "type": "dimension"
       }
+    },
+    "Containers": {
+      "Dock": {
+        "value": "7rem",
+        "type": "dimension"
+      },
+      "MenuLeft": {
+        "value": "20rem",
+        "type": "dimension"
+      },
+      "MenuRight": {
+        "value": "14rem",
+        "type": "dimension"
+      },
+      "ChatWrap": {
+        "value": "52rem",
+        "type": "dimension"
+      },
+      "Body": {
+        "value": "90rem",
+        "type": "dimension"
+      },
+      "Header": {
+        "value": "10rem",
+        "type": "dimension"
+      }
+    },
+    "Spacing": {
+      "XS": {
+        "value": "{Base.Spacing} /3",
+        "type": "spacing"
+      },
+      "SM": {
+        "value": "{Base.Spacing}",
+        "type": "spacing"
+      },
+      "MD": {
+        "value": "{Base.Spacing} *2",
+        "type": "spacing"
+      },
+      "LG": {
+        "value": "{Base.Spacing} *3",
+        "type": "spacing"
+      },
+      "XL": {
+        "value": "{Base.Spacing} *4",
+        "type": "spacing"
+      }
+    },
+    "Icons": {
+      "SM": {
+        "value": "1.5rem",
+        "type": "dimension"
+      },
+      "LG": {
+        "value": "2.5rem",
+        "type": "dimension"
+      }
+    },
+    "BorderWidths": {
+      "SM": {
+        "value": "1",
+        "type": "borderWidth"
+      }
+    },
+    "BorderRadiuses": {
+      "None": {
+        "value": "0",
+        "type": "borderRadius"
+      }
+    },
+    "Borders": {
+      "Inputs": {
+        "value": {
+          "color": "{Grounds.Front}",
+          "width": "0.063rem",
+          "style": "solid"
+        },
+        "type": "border"
+      }
+    },
+    "Main": {
+      "MainWrap": {
+        "value": {
+          "maxWidth": "55rem"
+        },
+        "type": "composition"
+      },
+      "Header": {
+        "value": {
+          "verticalPadding": "{Spacing.MD}",
+          "itemSpacing": "{Spacing.MD}",
+          "fill": "{Gardients.Header}",
+          "height": "{Containers.Header}"
+        },
+        "type": "composition"
+      }
     }
   },
-  "Brands/Rothschild/Corp": {},
-  "Brands/Rothschild/GUI": {},
+  "Brands/Rothschild/Corp": {
+    "Brand": {
+      "Primary": {
+        "value": "#1B3156",
+        "type": "color",
+        "description": "30B6FF"
+      },
+      "Secondary": {
+        "value": "#CC9F53",
+        "type": "color",
+        "description": "1F8EB1"
+      },
+      "Tertiary": {
+        "value": "#EFECEA",
+        "type": "color",
+        "description": "383838"
+      }
+    },
+    "Buttons": {
+      "SecondaryDefault": {
+        "value": "#39708400",
+        "type": "color",
+        "description": "387084"
+      },
+      "SecondaryHover": {
+        "value": "#397084",
+        "type": "color",
+        "description": "387084"
+      },
+      "SuttonSecondaryActive": {
+        "value": "#1f8fb2",
+        "type": "color",
+        "description": "1F8FB2"
+      },
+      "CTA": {
+        "value": "{Body.SM}",
+        "type": "typography"
+      }
+    },
+    "Surfaces": {
+      "Surface4": {
+        "value": "{Brand.Tertiary}",
+        "type": "color"
+      },
+      "Surface3": {
+        "value": "{Brand.Primary}",
+        "type": "color",
+        "description": "252423",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "darken",
+              "value": "0.2",
+              "space": "hsl"
+            }
+          }
+        }
+      },
+      "Surface2": {
+        "value": "{Brand.Primary}",
+        "type": "color",
+        "description": "252423",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "darken",
+              "value": "0.2",
+              "space": "hsl"
+            }
+          }
+        }
+      },
+      "Surface1": {
+        "value": "{Grounds.Back}",
+        "type": "color"
+      },
+      "SurfaceError": {
+        "value": "#0a618f",
+        "type": "color",
+        "description": "09608F"
+      }
+    },
+    "TextColors": {
+      "OnLighterGrund": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "description": "D9D7DD"
+      },
+      "OnDarkerGround": {
+        "value": "#fff",
+        "type": "color"
+      },
+      "OnSurface4": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.001",
+              "space": "hsl",
+              "color": "{Surfaces.Surface4} "
+            }
+          }
+        }
+      },
+      "OnSurface3": {
+        "value": "{Grounds.Back}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.009",
+              "space": "hsl",
+              "color": "{Surfaces.Surface3} "
+            }
+          }
+        }
+      },
+      "OnSurface2": {
+        "value": "{Surfaces.Surface2}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.95",
+              "space": "hsl",
+              "color": "{TextColors.OnLighterGrund} "
+            }
+          }
+        }
+      },
+      "OnSurface1": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.0001",
+              "space": "hsl",
+              "color": "{Surfaces.Body} "
+            }
+          }
+        }
+      },
+      "IsActive": {
+        "value": "{Brand.Secondary}",
+        "type": "color"
+      },
+      "Headlines": {
+        "value": "{Brand.Primary}",
+        "type": "color"
+      },
+      "Reserved": {
+        "value": "{TextColors.OnSurface4}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "lighten",
+              "value": "0.42",
+              "space": "lch"
+            }
+          }
+        }
+      }
+    },
+    "Grounds": {
+      "Front": {
+        "value": "#000",
+        "type": "color"
+      },
+      "Back": {
+        "value": "#fff",
+        "type": "color"
+      },
+      "Neutral1": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.99",
+              "space": "hsl",
+              "color": "{Grounds.Back} "
+            }
+          }
+        }
+      },
+      "Neutral2": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.75",
+              "space": "hsl",
+              "color": "{Grounds.Back} "
+            }
+          }
+        }
+      },
+      "Neutral3": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.6",
+              "space": "hsl",
+              "color": "{Grounds.Back} "
+            }
+          }
+        }
+      },
+      "Neutral4": {
+        "value": "{Grounds.Front}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "mix",
+              "value": "0.2",
+              "space": "hsl",
+              "color": "{Grounds.Back} "
+            }
+          }
+        }
+      }
+    },
+    "Label": {
+      "XS": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{LineHeights.Denced}*{FontSizes.XS}",
+          "fontSize": "{FontSizes.XS}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}",
+          "paragraphIndent": "None"
+        },
+        "type": "typography"
+      },
+      "MD": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{FontSizes.MD}",
+          "fontSize": "{FontSizes.MD}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "paragraphIndent": "0",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      },
+      "LG": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{FontSizes.MD}",
+          "fontSize": "{FontSizes.LG}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "paragraphIndent": "0",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      }
+    },
+    "Titel": {
+      "XS": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{LineHeights.Denced}*{FontSizes.XS}",
+          "fontSize": "{FontSizes.XS}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.None}",
+          "paragraphIndent": "0",
+          "textCase": "{TextCases.UpperCase}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      },
+      "MD": {
+        "value": {
+          "fontFamily": "{FontFamilies.Butter}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "fontSize": "{FontSizes.MD}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.Normal}",
+          "paragraphIndent": "None",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}",
+          "lineHeight": "{LineHeights.Denced}*{FontSizes.MD}"
+        },
+        "type": "typography",
+        "description": "Chat Questions"
+      }
+    },
+    "Body": {
+      "SM": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{FontSizes.SM}*{LineHeights.Normal}",
+          "fontSize": "{FontSizes.SM}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.Normal}",
+          "paragraphIndent": "None",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      }
+    },
+    "Interactions": {
+      "TextLink": {
+        "value": {
+          "fontFamily": "{FontFamilies.Bread}",
+          "fontWeight": "{FontWeights.Reguar}",
+          "lineHeight": "{LineHeights.Normal}*{FontSizes.SM}",
+          "fontSize": "{FontSizes.SM}",
+          "letterSpacing": "{LetterSpacings.Normal}",
+          "paragraphSpacing": "{ParagraphSpacings.Normal}",
+          "paragraphIndent": "0",
+          "textCase": "{TextCases.None}",
+          "textDecoration": "{TextDecorations.None}"
+        },
+        "type": "typography"
+      }
+    },
+    "TextCases": {
+      "None": {
+        "value": "none",
+        "type": "textCase"
+      },
+      "UpperCase": {
+        "value": "uppercase",
+        "type": "textCase"
+      }
+    },
+    "TextDecorations": {
+      "None": {
+        "value": "none",
+        "type": "textDecoration"
+      }
+    },
+    "FontFamilies": {
+      "Butter": {
+        "value": "Calluna",
+        "type": "fontFamilies"
+      },
+      "Bread": {
+        "value": "Source Sans Pro",
+        "type": "fontFamilies"
+      }
+    },
+    "FontWeights": {
+      "Light": {
+        "value": "Light",
+        "type": "fontWeights"
+      },
+      "Reguar": {
+        "value": "Regular",
+        "type": "fontWeights"
+      },
+      "SemiBold": {
+        "value": "SemiBold",
+        "type": "fontWeights"
+      }
+    },
+    "LineHeights": {
+      "Denced": {
+        "value": "1.54",
+        "type": "lineHeights"
+      },
+      "Normal": {
+        "value": "1.8",
+        "type": "lineHeights"
+      },
+      "Wide": {
+        "value": "2.3",
+        "type": "lineHeights"
+      }
+    },
+    "FontSizes": {
+      "XS": {
+        "value": "0.875rem",
+        "type": "fontSizes"
+      },
+      "SM": {
+        "value": "1.25rem",
+        "type": "fontSizes",
+        "description": "Body Chat "
+      },
+      "MD": {
+        "value": "1.75rem",
+        "type": "fontSizes"
+      },
+      "LG": {
+        "value": "2.5rem",
+        "type": "fontSizes"
+      }
+    },
+    "LetterSpacings": {
+      "Condenced": {
+        "value": "-2%",
+        "type": "letterSpacing"
+      },
+      "Normal": {
+        "value": "0%",
+        "type": "letterSpacing"
+      },
+      "Narrow": {
+        "value": "-1%",
+        "type": "letterSpacing"
+      },
+      "Widened": {
+        "value": "1%",
+        "type": "letterSpacing"
+      },
+      "Expanded": {
+        "value": "2.423%",
+        "type": "letterSpacing"
+      }
+    },
+    "ParagraphSpacings": {
+      "Normal": {
+        "value": "2.813rem",
+        "type": "paragraphSpacing"
+      },
+      "None": {
+        "value": "0",
+        "type": "paragraphSpacing"
+      }
+    },
+    "IconColors": {
+      "Default": {
+        "value": "{TextColors.OnLighterGrund}",
+        "type": "color"
+      },
+      "Active": {
+        "value": "{Brand.Secondary}",
+        "type": "color"
+      },
+      "InActive": {
+        "value": "{Grounds.Neutral3}",
+        "type": "color"
+      }
+    },
+    "Gardients": {
+      "Header": {
+        "value": "linear-gradient(180deg, {Grounds.Back} 68.93%, rgba(255, 255, 255, 0.00) 93.26%)",
+        "type": "color"
+      }
+    }
+  },
+  "Brands/Rothschild/GUI": {
+    "Services": {
+      "Menu": {
+        "Rail": {
+          "value": {
+            "fill": "{Surfaces.Surface2}",
+            "width": "{Containers.Dock}"
+          },
+          "type": "composition"
+        },
+        "Left": {
+          "value": {
+            "fill": "{Surfaces.Surface2}",
+            "width": "{Containers.MenuLeft}",
+            "horizontalPadding": "{Spacing.MD}",
+            "itemSpacing": "{Spacing.SM}"
+          },
+          "type": "composition"
+        },
+        "Right": {
+          "value": {
+            "fill": "{Surfaces.Surface1}",
+            "width": "{Containers.MenuRight}",
+            "horizontalPadding": "{Spacing.MD}",
+            "itemSpacing": "{Spacing.SM}"
+          },
+          "type": "composition"
+        },
+        "Header": {
+          "value": {
+            "height": "11.375rem",
+            "paddingBottom": "{Spacing.MD}"
+          },
+          "type": "composition"
+        }
+      },
+      "History": {
+        "Item": {
+          "value": {
+            "paddingLeft": "{Spacing.XS}+ {Icons.SM}",
+            "paddingTop": "0px",
+            "itemSpacing": "{Spacing.SM}"
+          },
+          "type": "composition"
+        },
+        "Search": {
+          "value": {
+            "itemSpacing": "{Spacing.SM}",
+            "paddingLeft": "{Spacing.XS}",
+            "paddingRight": "{Spacing.SM}",
+            "fill": "{Surfaces.Surface3}",
+            "borderBottom": "{Borders.Inputs}",
+            "borderColor": "{TextColors.OnSurface3}"
+          },
+          "type": "composition"
+        }
+      },
+      "Main": {
+        "ChatStack": {
+          "value": {
+            "width": "{Containers.ChatWrap}",
+            "fill": "none"
+          },
+          "type": "composition"
+        },
+        "ChatBox": {
+          "Container": {
+            "value": {
+              "width": "{Containers.ChatWrap}",
+              "fill": "{Surfaces.Surface4}"
+            },
+            "type": "composition"
+          },
+          "InputContainer": {
+            "value": {
+              "spacing": "0",
+              "itemSpacing": "{Spacing.XS}"
+            },
+            "type": "composition"
+          },
+          "Input": {
+            "value": {
+              "itemSpacing": "{Spacing.XS}",
+              "verticalPadding": "{Spacing.SM}",
+              "paddingLeft": "{Spacing.XS}",
+              "paddingRight": "{Spacing.SM}",
+              "borderBottom": "{BorderWidths.SM}",
+              "borderColor": "{TextColors.OnSurface4}"
+            },
+            "type": "composition"
+          },
+          "Value": {
+            "value": {
+              "typography": "{Label.MD}"
+            },
+            "type": "composition"
+          },
+          "Submit": {
+            "value": {
+              "sizing": "{Icons.LG}"
+            },
+            "type": "composition"
+          },
+          "Helper": {
+            "value": {
+              "paddingLeft": "{Spacing.XS}",
+              "itemSpacing": "{Spacing.XS}"
+            },
+            "type": "composition"
+          }
+        },
+        "Chat": {
+          "ChatItemContainer": {
+            "value": {
+              "spacing": "{Spacing.MD}"
+            },
+            "type": "composition"
+          },
+          "Thread": {
+            "value": {
+              "itemSpacing": "0"
+            },
+            "type": "composition"
+          },
+          "Error": {
+            "value": {
+              "spacing": "{Spacing.MD}",
+              "fill": "{Surfaces.SurfaceError}"
+            },
+            "type": "composition"
+          }
+        }
+      },
+      "Buttons": {
+        "CTAbutton": {
+          "value": {
+            "itemSpacing": "{Spacing.SM}",
+            "spacing": "0"
+          },
+          "type": "composition"
+        }
+      }
+    },
+    "Base": {
+      "Spacing": {
+        "value": "0.9375rem",
+        "type": "dimension",
+        "description": "Rotschild has a 5, 15, 20, ... Spacing numberrow - interpretated in rem"
+      },
+      "TextRem": {
+        "value": "16px",
+        "type": "dimension"
+      }
+    },
+    "Containers": {
+      "Dock": {
+        "value": "7rem",
+        "type": "dimension"
+      },
+      "MenuLeft": {
+        "value": "20rem",
+        "type": "dimension"
+      },
+      "MenuRight": {
+        "value": "14rem",
+        "type": "dimension"
+      },
+      "ChatWrap": {
+        "value": "52rem",
+        "type": "dimension"
+      },
+      "Body": {
+        "value": "90rem",
+        "type": "dimension"
+      },
+      "Header": {
+        "value": "10rem",
+        "type": "dimension"
+      }
+    },
+    "Spacing": {
+      "XS": {
+        "value": "{Base.Spacing} /3",
+        "type": "spacing"
+      },
+      "SM": {
+        "value": "{Base.Spacing}",
+        "type": "spacing"
+      },
+      "MD": {
+        "value": "{Base.Spacing} *2",
+        "type": "spacing"
+      },
+      "LG": {
+        "value": "{Base.Spacing} *3",
+        "type": "spacing"
+      },
+      "XL": {
+        "value": "{Base.Spacing} *4",
+        "type": "spacing"
+      }
+    },
+    "Icons": {
+      "SM": {
+        "value": "1.5rem",
+        "type": "dimension"
+      },
+      "LG": {
+        "value": "2.5rem",
+        "type": "dimension"
+      }
+    },
+    "BorderWidths": {
+      "SM": {
+        "value": "1",
+        "type": "borderWidth"
+      }
+    },
+    "BorderRadiuses": {
+      "None": {
+        "value": "0",
+        "type": "borderRadius"
+      }
+    },
+    "Borders": {
+      "Inputs": {
+        "value": {
+          "color": "{Grounds.Front}",
+          "width": "0.063rem",
+          "style": "solid"
+        },
+        "type": "border"
+      }
+    },
+    "Main": {
+      "MainWrap": {
+        "value": {
+          "maxWidth": "55rem"
+        },
+        "type": "composition"
+      },
+      "Header": {
+        "value": {
+          "verticalPadding": "{Spacing.MD}",
+          "itemSpacing": "{Spacing.MD}",
+          "fill": "{Gardients.Header}",
+          "height": "{Containers.Header}"
+        },
+        "type": "composition"
+      }
+    }
+  },
   "$themes": [
     {
       "id": "c248ee67d79db910c26590cd69ea1f205c01f385",
-      "name": "light",
+      "name": "dark",
       "$figmaStyleReferences": {},
       "selectedTokenSets": {
         "Brands/Klab/GUI": "enabled",
         "Brands/Klab/Corp": "enabled",
-        "GUI": "source"
+        "GUI": "source",
+        "Styles": "source"
       },
-      "group": "k-lab",
-      "$figmaVariableReferences": {
-        "Base.Space": "e93dafef14284963e4ad7ad20ecc890f52420c46",
-        "Brand.Primary": "2547c7e1f442f6f6741687ac72ece466abb54cc2",
-        "Brand.Secondary": "8dcdc83803eaf615681a40e634c26c7c4dba92ee",
-        "Brand.Tertiary": "ac8fd35b32533daf5f87d55338f3add4d62b2b5c",
-        "Buttons.SecondaryDefault": "a5704638997528c99eeeeb488e82a470ca8db6b0",
-        "Buttons.SecondaryHover": "5a7bfd3a89d97f6e3d8b3f268006995da3880772",
-        "Buttons.SuttonSecondaryActive": "af325a72d1a01dbf0bf1d3336d5c2268f5626465",
-        "Surfaces.Surface4": "4a352f8f9915ab17cc5940f0f4cfb84f0aa7caae",
-        "Surfaces.Surface3": "688337e009c5eb927cc7227bde3da03afccc4e73",
-        "Surfaces.Surface2": "283dc185debabc374d245af752bf2b8d1bc04093",
-        "Surfaces.Surface1": "fbe6c2c2ba473bfa439d045c83deae4a35e23a54",
-        "Surfaces.SurfaceError": "e5b2fa5879523bcb30a634707486374b49754775",
-        "TextColors.text-default": "2120cd5ed35dbedb4bab6278e63f1e1a4a29ddc2",
-        "TextColors.OnSurface1": "2bf89d18f6115efb4f0d5cd8ff74f7d0f6414ae1",
-        "TextColors.OnSurface2": "370c2fb557f349276c8d7621eb110bf393e9ca40",
-        "TextColors.OnSurface3": "d101c97bde74bf9bdf1976236fc0e40a085a5e17",
-        "TextColors.OnSurface4": "4b95fa3a62a4fe0127556c4bdeb4cbe23e6f9b1f",
-        "TextColors.Active": "fa1884397362cf4bf637cb40d64aa0955c77c706",
-        "Grounds.Front": "14efce99389c3a312f6c3d0a742ca31e58ad0a2d",
-        "Grounds.Back": "2ad02c9ad9d0963f22edcdd23b2d3f1b98468b94",
-        "Grounds.Neutral1": "1859eae7b58b988aa5bf3484a1e1608b274eb61c",
-        "Grounds.Neutral2": "2136ecec0029650857d93bf9a8992679984ce35c",
-        "Grounds.Neutral3": "61cd2b4014a94e46d8b0cc8c21b0d2e953260526",
-        "Grounds.Neutral4": "992d2d5449d6687021e4a2cb09bdbfea2c662713",
-        "Base.Rem": "9c7518d3272748c7fb6e1ff673802dcb2f99f81d"
-      },
-      "$figmaCollectionId": "VariableCollectionId:137:4537",
-      "$figmaModeId": "137:0"
+      "$figmaVariableReferences": {},
+      "$figmaCollectionId": "VariableCollectionId:332:3057",
+      "$figmaModeId": "332:0",
+      "group": "k-lab"
     },
     {
       "id": "89ae8bbfc0f86c48b72a881f179721fbd643cad0",
       "name": "light",
-      "$figmaStyleReferences": {
-        "Brand.Primary": "S:86e1f18c5665064eec09d1805754a48457985687,",
-        "Brand.Secondary": "S:6a0e47cdb48ac731449dad0165b9bd5a24c4864b,",
-        "Brand.Tertiary": "S:715884368ed1fc1a90d3063af4675b9db7a29607,",
-        "Buttons.SecondaryDefault": "S:f7c63eddd584bb2f7e5f0be5dceb682f94256f2f,",
-        "Buttons.SecondaryHover": "S:df0c97b330d5e1ec610f6c55ee93ca482b764cc8,",
-        "Buttons.SuttonSecondaryActive": "S:3f5c85f86aa6b3034bf3c1fa8d6d12f71a724806,",
-        "Surfaces.Surface1": "S:e025b385d8f463395c6315eda708fc60f02e23a2,",
-        "Surfaces.Surface2": "S:4fcabaf7a0ecb08d5ad5ff3a59ae6dc52fc60f14,",
-        "Surfaces.Surface3": "S:de950a35958d944c0bbbda26d79638e2ff2c2995,",
-        "Surfaces.Surface4": "S:94f01efbc7f78aa21f89b644b03f6160245a37ce,",
-        "Surfaces.SurfaceError": "S:44318367ef94697625a68a08415bad69e79516e7,",
-        "TextColors.OnLighterGrund": "S:b018a311dbe796cfc416ecdde5ea7b2caf34ee2e,",
-        "TextColors.OnDarkerGround": "S:1b58e26e6446d9a980ba375fdf8643656c2742df,",
-        "TextColors.OnSurface1": "S:98a395eddd2f4b98bf54ed94ad575f2a0d9c47e7,",
-        "TextColors.OnSurface2": "S:4a607cf9d09f89c859e2f9de512dfdc3744c826d,",
-        "TextColors.OnSurface3": "S:a12d054ad703e93caadc4020cd4999168398c1fa,",
-        "TextColors.OnSurface4": "S:74d77abc5d241553a71855e5cc9880af5ed1bf6d,",
-        "TextColors.IsActive": "S:9f8819b00fb019900a4d51befa8646740bfa4ab7,",
-        "Grounds.Front": "S:e95e7ea7b3a148b79bafb158f9034a932e84c84d,",
-        "Grounds.Back": "S:2c93173f19cacc08bd3c2e0ca17273648450acaf,",
-        "Grounds.Neutral1": "S:97555d993704100e2950365436354465b8dd6868,",
-        "Grounds.Neutral2": "S:9ec9dcc9328a838e3d9e423f1f580176c0b08381,",
-        "Grounds.Neutral3": "S:cee7129d64346d65dd009d0a27a48e63bf44c63d,",
-        "Grounds.Neutral4": "S:eeb0fcb237ef13e49d6c4736e83a8131eb2c137c,",
-        "IconColors.Default": "S:cd00d8ebb30c7d18e2d5e2f2c405314b3934e524,",
-        "IconColors.Active": "S:6a17d738b2caecade2d1f7f53412a334fd59ddb5,",
-        "IconColors.InActive": "S:4528c06752711ce9d397bf863745571e3d1d0f81,",
-        "TextColors.Headlines": "S:c686bde707b91bc15eb86fe928d346f954867a8c,",
-        "Label.XS": "S:21c1d5cb4901c818a0cca559a340c8f3b1d4bf9c,",
-        "Label.MD": "S:4b315d92f41a5397631facde1520d11cbf61d563,",
-        "Label.LG": "S:60e9ad03d9b9d7b52d99d5ecaddb31869d9832c4,",
-        "Titel.XS": "S:4af5ba87edaaf871a2a7cd705d4ef9277f8b0cd8,",
-        "Titel.MD": "S:3a5367adf8033b0505d31db4eda3bf0a820079fb,",
-        "Body.SM": "S:cf497865972e3f80bbbf00d06520398fc6a12c5e,",
-        "Interactions.TextLink": "S:b411da2ae889c5dc03522da07ae62e06776eabca,",
-        "TextColors.Reserved": "S:20ac8a95b50f710c4a7858bc7375daa9a7bb6049,",
-        "Gardients.Header": "S:f1b6d1920525c4874dd6cc22a91d1e537d47a1ea,",
-        "Buttons.CTA": "S:ce1823d99fc938a778da951de75968367442e7b9,"
-      },
+      "$figmaStyleReferences": {},
       "selectedTokenSets": {
         "Brands/Rothschild/Corp": "enabled",
         "Brands/Rothschild/GUI": "enabled",
-        "Styles": "enabled",
-        "GUI": "enabled"
+        "Styles": "source",
+        "GUI": "source"
       },
-      "$figmaVariableReferences": {
-        "Base.Spacing": "f78f838408584129f2953e48eda0f7ef74120d06",
-        "Base.TextRem": "7b5f9ac74380b5c8ef374e86c39571acd72d9b5e",
-        "Containers.Dock": "36e7f3e14307c56ecdc171892aff6e909ebc02f5",
-        "Containers.MenuLeft": "b09f079400b045b6a439cbbdff16cb2cb46e0364",
-        "Containers.MenuRight": "02cb08fe1f5c470e18b7568c0de60658f1a79248",
-        "Containers.ChatWrap": "5f72889efd3af444ee69fd2a2683679fec15aa56",
-        "Containers.Body": "792ed16282541b981797092a6050211785f31b4d",
-        "Containers.Header": "2a8e66edfedca745f087962b82efef645c4421bc",
-        "Spacing.XS": "50cb21535d5748bce08824996a371a716c5169af",
-        "Spacing.SM": "be0b109acb29375f6d359c496da48c5ee0080ae2",
-        "Spacing.MD": "bec917b2db68ebb37dcd0ca776648f35f23cf47c",
-        "Spacing.LG": "758c8a9523c2166bb4a2ccd53551b39f2565b4f2",
-        "Spacing.XL": "e0ba2115fd25ccb38804aefbdaf3283f60cfa17b",
-        "Icons.SM": "2baf37194527bacac86c62b61e4ff440e9cf143c",
-        "Icons.LG": "9a46b7c2be900b4050112a36e06f6735cf365699",
-        "BorderWidths.SM": "b39c8b2e0e592dfe35574568ae3ebbbf6696363e",
-        "BorderRadiuses.None": "0ed0871b850ce4bebe9e10beb1b04cca0e312675",
-        "Brand.Primary": "514d1b112757fd76ac797f2bc627c9c144765ea8",
-        "Brand.Secondary": "7298a0ce2562dbc5b102d40763818d21331f94b0",
-        "Brand.Tertiary": "46430ecdc23d04d1283fd649d0a196d2d5c7fea4",
-        "Buttons.SecondaryDefault": "68fa536cdcdfac2eeabec68c96e1be2f096b82ca",
-        "Buttons.SecondaryHover": "081a291cd3cb1a96f5290014085b3aed8f03071c",
-        "Buttons.SuttonSecondaryActive": "cb7490e5c7307cf4e759dbd06c2ea2ca82255c0c",
-        "Surfaces.Surface1": "eef45d49d049348ac55be41272cb02efd2985a50",
-        "Surfaces.Surface2": "4b6c3ecd0eebfcfa8caf65388bd964b25d9dbb00",
-        "Surfaces.Surface3": "94a18f378c4e344439aad39193d748053bb17174",
-        "Surfaces.Surface4": "01a427649df42dfdca2d9d1ee92d1b4187f93b3a",
-        "Surfaces.SurfaceError": "c14a40144f34f1aea156a7c3b5c82d505124c7c3",
-        "TextColors.OnLighterGrund": "72fcb5262873e1202046a943ed060c8c63f51c58",
-        "TextColors.OnDarkerGround": "a9ff1bf072988d5533368119f5f5cd73239b3df8",
-        "TextColors.OnSurface1": "4ba2e58a7db0d715664241f1cbaab6a7b54c4384",
-        "TextColors.OnSurface2": "681635f3919f5495db8f8ee00908511979dd86cd",
-        "TextColors.OnSurface3": "c40fc40acbd09d6a8e7d2cad569010d99d589f6a",
-        "TextColors.OnSurface4": "a65edb67184bc7fd92c211df458cdf35f18ebe67",
-        "TextColors.IsActive": "3d57cd566630ed646fb58506b165d97a45bba41a",
-        "TextColors.Headlines": "c49dfe470f260a4d7ae43dd405eb4084f92f6187",
-        "TextColors.Reserved": "ec4edef2cad43ee84114516b12d837bb22921c7f",
-        "Grounds.Front": "e9104dc63e468fac1cbd61cfc18368c04c70a496",
-        "Grounds.Back": "8ce2cbcb1f7246a5cc97e5c80a4be068ed90885e",
-        "Grounds.Neutral1": "4a93edb97f68b32e226550d6ef39622d1fba3e72",
-        "Grounds.Neutral2": "062d8f1283d7ac6353eed64cf8a57bb12f451484",
-        "Grounds.Neutral3": "84f19b890abff98874daab16085315b4bb99c25a",
-        "Grounds.Neutral4": "27a821963fcc050286eeeb0f670c4dbd91a3728f",
-        "IconColors.Default": "a7a11076614c477ba84ff898e558400c326997cb",
-        "IconColors.Active": "59c5a4b235117d290fff21c7a2e1cc5817837ed5",
-        "IconColors.InActive": "f99fe8a61799ffaddff430ed8a86a018a6326fba"
-      },
-      "$figmaCollectionId": "VariableCollectionId:137:4563",
-      "$figmaModeId": "137:1",
+      "$figmaVariableReferences": {},
+      "$figmaCollectionId": "VariableCollectionId:332:3104",
+      "$figmaModeId": "332:1",
       "group": "rothschild"
     }
   ],
